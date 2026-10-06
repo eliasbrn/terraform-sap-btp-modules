@@ -16,7 +16,7 @@ locals {
 
 
 resource "btp_subaccount" "this" {
-  name         = "NEW NAME"
+  name         = "Remote Module"
   subdomain    = local.subaccount_subdomain
   region       = var.region
   beta_enabled = local.beta_enabled
