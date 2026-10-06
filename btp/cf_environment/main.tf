@@ -13,7 +13,7 @@ resource "btp_subaccount_environment_instance" "cloudfoundry" {
   name             = var.org_name
   environment_type = "cloudfoundry"
   service_name     = "cloudfoundry"
-  plan_name        = "standard"
+  plan_name        = "trial"
 
   parameters = jsonencode({
     instance_name = "my-cf-org-name"
