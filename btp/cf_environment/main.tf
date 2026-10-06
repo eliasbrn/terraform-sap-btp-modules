@@ -16,7 +16,7 @@ resource "btp_subaccount_environment_instance" "cloudfoundry" {
   plan_name        = "trial"
 
   parameters = jsonencode({
-    instance_name = "var.org_name"
+    instance_name = var.org_name
   })
 }
 
