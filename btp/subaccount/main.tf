@@ -8,7 +8,7 @@ terraform {
 
 
 locals {
-  subaccount_name      = "${var.subaccount_stage} | ${var.landscape_name} | Test"
+  subaccount_name      = "${var.subaccount_stage} | ${var.landscape_name}"
   subaccount_subdomain = join("-", [lower(replace("${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
   beta_enabled         = var.subaccount_stage == "PROD" ? false : true
   subaccount_cf_org    = local.subaccount_subdomain
