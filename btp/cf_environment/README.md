@@ -30,4 +30,4 @@ No modules.
 | Name | Description |
 | ---- | ----------- |
 | <a name="output_api_url"></a> [api\_url](#output\_api\_url) | API URL of the Cloud Foundry Organization |
-| <a name="output_id"></a> [id](#output\_id) | ID of the Cloud Foundry Environment Instance |
+| <a name="output_org_id"></a> [org\_id](#output\_org\_id) | API URL of the Cloud Foundry Organization |
