@@ -23,14 +23,14 @@ output "subaccount_subdomain" {
 output "cf_org_id" {
   description = "ID of the Cloud Foundry Organization"
   value = jsondecode(
-    btp_subaccount_environment_instance.cloudfoundry.labels
+    btp_subaccount_environment_instance.this.labels
   )["Org ID"]
 }
 
 output "cf_api_url" {
   description = "API URL of the Cloud Foundry Organization"
   value = jsondecode(
-    btp_subaccount_environment_instance.cloudfoundry.labels
+    btp_subaccount_environment_instance.this.labels
   )["API Endpoint"]
 }
 output "cf_org_name" {
@@ -56,7 +56,7 @@ output "space_foundation_id" {
 # --------------------------------
 output "list_entitlements" {
   description = "List of all Entitlements"
-  value = module.entitlements.outputs.entitlement_list
+  value = module.entitlements.entitlement_list
 }
 
 # --------------------------------
