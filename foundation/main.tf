@@ -90,7 +90,7 @@ resource "btp_subaccount_role_collection" "demo" {
 # --------------------------------
 # Role Collection Assignments
 # --------------------------------
-module "role_collection_assignments" {
+module "role_collection_assignment" {
   source  = "SAP/rolecollection/btp"
   version = "0.1.0"
 
