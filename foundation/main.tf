@@ -5,7 +5,9 @@ locals {
   cf_org_name           = local.subaccount_subdomain
 }
 
-
+# --------------------------------
+# Subaccount
+# --------------------------------
 resource "btp_subaccount" "this" {
   name         = local.subaccount_name
   subdomain    = local.subaccount_subdomain
@@ -17,6 +19,9 @@ resource "btp_subaccount" "this" {
   }
 }
 
+# --------------------------------
+# Cloud Foundry & Spaces
+# --------------------------------
 resource "btp_subaccount_environment_instance" "this" {
   subaccount_id    = btp_subaccount.this.id
   name             = local.cf_org_name
@@ -29,7 +34,16 @@ resource "btp_subaccount_environment_instance" "this" {
   })
 }
 
-module "sap-btp-entitlements" {
+resource "cloudfoundry_space" "foundation" {
+  name      = "Foundation"
+  org       = btp_subaccount_environment_instance.this.id
+  labels    = { purpose : "${var.subaccount_stage}" }
+}
+
+# --------------------------------
+# Entitlements
+# --------------------------------
+module "entitlements" {
   source  = "aydin-ozcan/sap-btp-entitlements/btp"
   version = "1.0.1"
 
@@ -43,12 +57,9 @@ module "sap-btp-entitlements" {
 }
 
 
-resource "cloudfoundry_space" "foundation" {
-  name      = "Foundation"
-  org       = btp_subaccount_environment_instance.this.id
-  labels    = { purpose : "${var.subaccount_stage}" }
-}
-
+# --------------------------------
+# Role Collections
+# --------------------------------
 resource "btp_subaccount_role_collection" "demo" {
   subaccount_id = btp_subaccount.this.id
   name          = "Demo Role Collection"
