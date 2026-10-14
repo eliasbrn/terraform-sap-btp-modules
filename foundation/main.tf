@@ -12,7 +12,6 @@ resource "btp_subaccount" "this" {
   name         = local.subaccount_name
   subdomain    = local.subaccount_subdomain
   region       = var.subaccount_region
-  beta_enabled = local.beta_enabled
   parent_id    = var.subaccount_parent
   usage        = local.usage
   labels = {
