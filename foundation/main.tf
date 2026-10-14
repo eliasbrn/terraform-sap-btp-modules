@@ -90,9 +90,9 @@ resource "btp_subaccount_role_collection" "demo" {
 # --------------------------------
 # Role Collection Assignments
 # --------------------------------
-module "role_collection_assignment" {
-  source  = "SAP/rolecollection/btp"
-  version = "0.1.0"
+module "btp_role_collection_assignments" {
+  source  = "SAP/sap-btp-role-collection-assignments/btp"
+  version = "1.0.1"
 
   subaccount_id     = btp_subaccount.this.id
   default_origin_id = var.origin
