@@ -36,7 +36,7 @@ resource "btp_subaccount_environment_instance" "this" {
 
 resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
-  org       = btp_subaccount_environment_instance.this.platform_id
+  org       = "f4e688f6-b987-4536-8926-6c688a27e1f4"
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
