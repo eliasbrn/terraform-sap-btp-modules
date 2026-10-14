@@ -56,7 +56,7 @@ module "cf_users" {
 # --------------------------------
 # Entitlements
 # --------------------------------
-module "entitlements" {
+module "btp_entitlements" {
   source  = "aydin-ozcan/sap-btp-entitlements/btp"
   version = "1.0.1"
 
