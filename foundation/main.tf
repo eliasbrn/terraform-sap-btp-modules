@@ -1,8 +1,8 @@
 locals {
-  subaccount_name       = "${var.landscape_name} | ${var.subaccount_stage}"
-  subaccount_subdomain  = join("-", [lower(replace("${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
-  beta_enabled          = var.subaccount_stage == "PROD" ? false : true
-  cf_org_name           = local.subaccount_subdomain
+  subaccount_name       = "AUDI AG | ${var.landscape_name}: CF - ${var.subaccount_stage}"
+  subaccount_subdomain  = join("-", [lower(replace("audi-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
+  usage                 = var.subaccount_stage == "PRD" ? "USED_FOR_PRODUCTION" : "NOT_USED_FOR_PRODUCTION"
+  cf_org_instance       = join("-", [lower(replace("audi-cf-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
 }
 
 # --------------------------------
@@ -14,6 +14,7 @@ resource "btp_subaccount" "this" {
   region       = var.subaccount_region
   beta_enabled = local.beta_enabled
   parent_id    = var.subaccount_parent
+  usage        = local.usage
   labels = {
     "stage"      = [var.subaccount_stage]
   }
@@ -24,7 +25,7 @@ resource "btp_subaccount" "this" {
 # --------------------------------
 resource "btp_subaccount_environment_instance" "this" {
   subaccount_id    = btp_subaccount.this.id
-  name             = local.cf_org_name
+  name             = local.subaccount_subdomain
   environment_type = "cloudfoundry"
   service_name     = "cloudfoundry"
   plan_name        = "trial"
@@ -38,6 +39,19 @@ resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
   org       = btp_subaccount_environment_instance.this.platform_id
   labels    = { purpose : "${var.subaccount_stage}" }
+}
+
+module "cf_users" {
+  source = "../cf/users"
+
+  cf_org_id = btp_subaccount_environment_instance.this.platform_id
+  origin = "axafcftur-platform"
+
+  users = {
+    "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
+    "braun.elias17@gmail.com"   = ["organization_user"],
+    "elias.braun@audi.de"       = ["organization_auditor"]
+  }
 }
 
 # --------------------------------
