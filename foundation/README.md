@@ -15,6 +15,7 @@ No requirements.
 | ---- | ------ | ------- |
 | <a name="module_cf_users"></a> [cf\_users](#module\_cf\_users) | ../cf/users | n/a |
 | <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
+| <a name="module_role_collection_assignments"></a> [role\_collection\_assignments](#module\_role\_collection\_assignments) | SAP/rolecollection/btp | 0.1.0 |
 
 ## Resources
 
@@ -30,6 +31,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_landscape_name"></a> [landscape\_name](#input\_landscape\_name) | Name of the Landscape | `string` | n/a | yes |
+| <a name="input_origin"></a> [origin](#input\_origin) | Origin used for all created users | `string` | `"axafcftur-platform"` | no |
 | <a name="input_subaccount_parent"></a> [subaccount\_parent](#input\_subaccount\_parent) | Directory in which the subaccount is created | `string` | `null` | no |
 | <a name="input_subaccount_region"></a> [subaccount\_region](#input\_subaccount\_region) | Region of the Subaccount | `string` | n/a | yes |
 | <a name="input_subaccount_stage"></a> [subaccount\_stage](#input\_subaccount\_stage) | Stage of the Subaccount | `string` | n/a | yes |
