@@ -30,7 +30,7 @@ resource "btp_subaccount_environment_instance" "this" {
   plan_name        = "trial"
 
   parameters = jsonencode({
-    instance_name = lower(replace(local.cf_org_name, " ", "-"))
+    instance_name = lower(replace(local.cf_org_instance, " ", "-"))
   })
 }
 
