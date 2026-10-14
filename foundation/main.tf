@@ -1,8 +1,8 @@
 locals {
-  subaccount_name       = "AUDI AG | ${var.landscape_name}: CF - ${var.subaccount_stage}"
-  subaccount_subdomain  = join("-", [lower(replace("audi-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
+  subaccount_name       = "TRIAL | ${var.landscape_name}: CF - ${var.subaccount_stage}"
+  subaccount_subdomain  = join("-", [lower(replace("trial-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
   usage                 = var.subaccount_stage == "PRD" ? "USED_FOR_PRODUCTION" : "NOT_USED_FOR_PRODUCTION"
-  cf_org_instance       = join("-", [lower(replace("audi-cf-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
+  cf_org_instance       = join("-", [lower(replace("trial-cf-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
 }
 
 # --------------------------------
