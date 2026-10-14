@@ -44,7 +44,7 @@ module "cf_users" {
   source = "../cf/users"
 
   cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin = "axafcftur-platform"
+  origin    = var.origin
 
   users = {
     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
@@ -87,4 +87,25 @@ resource "btp_subaccount_role_collection" "demo" {
   ]
 }
 
+# --------------------------------
+# Role Collection Assignments
+# --------------------------------
+module "role_collection_assignments" {
+  source  = "SAP/rolecollection/btp"
+  version = "0.1.0"
+
+  subaccount_id     = btp_subaccount.this.id
+  default_origin_id = var.origin
+
+  role_collection_assignments_by_user = [
+    {
+      role_collection_name = "Subaccount Administrator"
+      user_names           = ["braun_elias@gmx.de"]
+    },
+    {
+      role_collection_name = "Demo Role Collection"
+      user_names           = ["braun_elias@gmx.de", "braun.elias17@gmail.com"]
+    }
+  ]
+}
 

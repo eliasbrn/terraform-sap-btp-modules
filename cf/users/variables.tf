@@ -9,6 +9,6 @@ variable "cf_org_id" {
 }
 
 variable "origin" {
-  description = "Origin, in which all users are getting created"
+  description = "Origin used for all created users"
   type = string
 }
