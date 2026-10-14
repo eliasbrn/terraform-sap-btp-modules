@@ -3,7 +3,6 @@ locals {
   subaccount_subdomain  = join("-", [lower(replace("${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
   beta_enabled          = var.subaccount_stage == "PROD" ? false : true
   cf_org_name           = local.subaccount_subdomain
-  cf_org_id = jsondecode(btp_subaccount_environment_instance.this.labels)["Org ID"]
 }
 
 # --------------------------------
@@ -37,7 +36,7 @@ resource "btp_subaccount_environment_instance" "this" {
 
 resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
-  org       = btp_subaccount_environment_instance.this.id
+  org       = btp_subaccount_environment_instance.this.platform_id
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
