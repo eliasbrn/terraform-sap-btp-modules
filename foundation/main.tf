@@ -40,17 +40,23 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-module "cf_users" {
-  source = "../cf/users"
+# module "cf_users" {
+#   source = "../cf/users"
 
-  cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin    = var.origin
+#   cf_org_id = btp_subaccount_environment_instance.this.platform_id
+#   origin    = var.origin
 
-  users = {
-    "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
-    "braun.elias17@gmail.com"   = ["organization_user"],
-    "elias.braun@audi.de"       = ["organization_auditor"]
-  }
+#   users = {
+#     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
+#     "braun.elias17@gmail.com"   = ["organization_user"],
+#     "elias.braun@audi.de"       = ["organization_auditor"]
+#   }
+# }
+
+resource "cloudfoundry_org_role" "this" {
+  username  = "elias.braun@audi.de"
+  type      = "organization_manager"
+  org       = btp_subaccount_environment_instance.this.platform_id
 }
 
 # --------------------------------
@@ -93,6 +99,7 @@ resource "btp_subaccount_role_collection" "demo" {
 module "btp_role_collection_assignments" {
   source  = "SAP/sap-btp-role-collection-assignments/btp"
   version = "1.0.1"
+  depends_on = [ btp_subaccount_role_collection.demo ]
 
   subaccount_id     = btp_subaccount.this.id
   default_origin_id = var.origin
