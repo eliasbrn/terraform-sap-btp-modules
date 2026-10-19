@@ -59,6 +59,12 @@ resource "cloudfoundry_org_role" "this" {
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
+resource "cloudfoundry_org_role" "this" {
+  username  = "braun.elias@audi.de"
+  type      = "organization_user"
+  org       = btp_subaccount_environment_instance.this.platform_id
+}
+
 # --------------------------------
 # Entitlements
 # --------------------------------
