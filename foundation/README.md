@@ -13,9 +13,9 @@ No requirements.
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
+| <a name="module_btp_entitlements"></a> [btp\_entitlements](#module\_btp\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
 | <a name="module_btp_role_collection_assignments"></a> [btp\_role\_collection\_assignments](#module\_btp\_role\_collection\_assignments) | SAP/sap-btp-role-collection-assignments/btp | 1.0.1 |
 | <a name="module_cf_users"></a> [cf\_users](#module\_cf\_users) | ../cf/users | n/a |
-| <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
 
 ## Resources
 
