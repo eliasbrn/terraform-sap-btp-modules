@@ -62,7 +62,7 @@ resource "cloudfoundry_org_role" "this" {
 # --------------------------------
 # Entitlements
 # --------------------------------
-module "btp_entitlements" {
+module "entitlements" {
   source  = "aydin-ozcan/sap-btp-entitlements/btp"
   version = "1.0.1"
 
