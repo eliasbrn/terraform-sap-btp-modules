@@ -57,6 +57,8 @@ resource "cloudfoundry_space" "foundation" {
 }
 
 resource "cloudfoundry_space_quota" "foundation_space_quota" {
+  depends_on               = [ cloudfoundry_space.foundation ]
+
   name                     = "Foundation"
   total_memory             = 1024
   total_routes             = 10
@@ -75,6 +77,8 @@ resource "cloudfoundry_space" "project" {
 }
 
 resource "cloudfoundry_space_quota" "project_space_quota" {
+  depends_on               = [ cloudfoundry_space.project  ]
+
   name                     = local.subaccount_name
   total_memory             = 8192
   total_routes             = 50
@@ -105,6 +109,29 @@ module "entitlements" {
  }
 }
 
+# --------------------------------
+# Subscriptions
+# --------------------------------
+resource "btp_subaccount_subscription" "auditlog_viewer" {
+  depends_on = [ module.entitlements ]
+
+  subaccount_id = btp_subaccount.this.id
+  app_name      = "auditlog-viewer"
+  plan_name     = "free"
+}
+
+# --------------------------------
+# Service Instances
+# --------------------------------
+resource "cloudfoundry_service_instance" "auditlog_management" {
+  depends_on = [ module.entitlements ]
+
+  name                  = "AuditLog-API-Access"
+  space                 = cloudfoundry_space.foundation.id
+  type                  = "managed"
+  service_plan_name     = "default"
+  service_offering_name = "auditlog-management"
+}
 
 # --------------------------------
 # Role Collections
@@ -139,7 +166,12 @@ module "btp_role_collection_assignments" {
     {
       role_collection_name = "TRIAL_PRC_Subaccount_R_Viewer"
       user_names           = ["elias.braun@audi.de", "braun.elias17@gmail.com"]
+    },
+    {
+      role_collection_name = "TRIAL_PRC_Subaccount_CloudConnectorC_Administrator"
+      user_names           = ["cloudconnector@admin.de"]
     }
+
   ]
 }
 
