@@ -65,9 +65,10 @@ module "entitlements" {
   subaccount = btp_subaccount.this.id
 
   entitlements = {
-    "alert-notification"     = ["standard"],
+    "application-logs"       = ["standard"],
     "application-logs"       = ["lite"],
-    "identity"               = ["application"],
+    "connectivity"           = ["lite"],
+    "destination"            = ["lite"]
  }
 }
 
