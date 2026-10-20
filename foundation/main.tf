@@ -75,18 +75,9 @@ module "entitlements" {
 # --------------------------------
 # Role Collections
 # --------------------------------
-resource "btp_subaccount_role_collection" "demo" {
-  subaccount_id = btp_subaccount.this.id
-  name          = "Demo Role Collection"
-  description   = "A Demo Role Collection which can be replaced."
-
-  roles = [
-    {
-      name                 = "Service Instances Viewer"
-      role_template_app_id = "service-manager!b1476"
-      role_template_name   = "Service_Instances_Viewer"
-    }
-  ]
+module "foundation_role_collections" {
+  source = "../btp/foundation_role_collections"
+  subaccount_stage = var.subaccount_stage
 }
 
 # --------------------------------
@@ -95,7 +86,7 @@ resource "btp_subaccount_role_collection" "demo" {
 module "btp_role_collection_assignments" {
   source  = "SAP/sap-btp-role-collection-assignments/btp"
   version = "1.0.1"
-  depends_on = [ btp_subaccount_role_collection.demo ]
+  depends_on = [module.foundation_role_collections]
 
   subaccount_id     = btp_subaccount.this.id
   default_origin_id = var.origin
@@ -106,7 +97,7 @@ module "btp_role_collection_assignments" {
       user_names           = ["braun_elias@gmx.de"]
     },
     {
-      role_collection_name = "Demo Role Collection"
+      role_collection_name = "AUDI_PRC_Subaccount_R_Viewer"
       user_names           = ["braun_elias@gmx.de", "braun.elias17@gmail.com"]
     }
   ]
