@@ -127,10 +127,10 @@ resource "cloudfoundry_service_instance" "auditlog_management" {
   depends_on = [ module.entitlements ]
 
   name                  = "AuditLog-API-Access"
-  space                 = cloudfoundry_space.foundation.id
-  type                  = "managed"
-  service_plan_name     = "default"
   service_offering_name = "auditlog-management"
+  service_plan_name     = "default"
+  type                  = "managed"
+  space                 = cloudfoundry_space.foundation.id
 }
 
 # --------------------------------
@@ -168,7 +168,7 @@ module "btp_role_collection_assignments" {
       user_names           = ["elias.braun@audi.de", "braun.elias17@gmail.com"]
     },
     {
-      role_collection_name = "TRIAL_PRC_Subaccount_CloudConnectorC_Administrator"
+      role_collection_name = "TRIAL_PRC_Subaccount_CloudConnector_C_Administrator"
       user_names           = ["cloudconnector@admin.de"]
     }
 
