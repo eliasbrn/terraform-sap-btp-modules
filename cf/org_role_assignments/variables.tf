@@ -1,4 +1,4 @@
-variable "users" {
+variable "org_role_assignments_by_user" {
   description = "List of Cloud Foundry Users with their e-mail and org roles"
   type = map(list(string))
 }

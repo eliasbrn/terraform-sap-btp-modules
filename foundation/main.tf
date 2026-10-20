@@ -34,23 +34,35 @@ resource "btp_subaccount_environment_instance" "this" {
   })
 }
 
+module "org_role_assignments" {
+  source = "../cf/org_role_assignments"
+
+  cf_org_id = btp_subaccount_environment_instance.this.platform_id
+  origin    = var.origin
+
+  org_role_assignments_by_user = {
+    "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
+    "braun.elias17@gmail.com"   = ["organization_user"],
+    "elias.braun@audi.de"       = ["organization_auditor"]
+  }
+}
+
 resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
   org       = btp_subaccount_environment_instance.this.platform_id
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-module "cf_users" {
-  source = "../cf/users"
-
-  cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin    = var.origin
-
-  users = {
-    "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
-    "braun.elias17@gmail.com"   = ["organization_user"],
-    "elias.braun@audi.de"       = ["organization_auditor"]
-  }
+resource "cloudfoundry_space_quota" "foundation_quota" {
+  name                     = "Foundation"
+  total_memory             = 1024
+  total_routes             = 10
+  total_services           = 10
+  instance_memory          = 1024
+  total_app_instances      = 10
+  allow_paid_service_plans = true
+  org                      = btp_subaccount_environment_instance.this.platform_id
+  spaces                   = cloudfoundry_space.foundation.id
 }
 
 
