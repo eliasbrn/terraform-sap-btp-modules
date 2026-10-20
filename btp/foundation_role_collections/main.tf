@@ -47,6 +47,8 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_Administrator"
 # Subaccount Light-Admin
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV" {
+  count = contains(["DEV", "SBX"], var.subaccount_stage) ? 1 : 0
+
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_DEV"
   description   = "Limited administrative access to the subaccount: Manage destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. Manage apps, services and space-scoped service brokers in a space. Includes read authorizations for viewing subaccount entitlement. Read-only access to service brokers and environments on a subaccount level."
