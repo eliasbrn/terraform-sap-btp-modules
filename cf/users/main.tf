@@ -11,12 +11,12 @@
 }
 
 # Create one Cloud Foundry user per email address
-resource "cloudfoundry_user_cf" "this" {
-  for_each = var.users
+# resource "cloudfoundry_user_cf" "this" {
+#   for_each = var.users
 
-  username = each.key
-  origin   = var.origin
-}
+#   username = each.key
+#   origin   = var.origin
+# }
 
 # Create one role assignment per user-role combination
 resource "cloudfoundry_org_role" "this" {
