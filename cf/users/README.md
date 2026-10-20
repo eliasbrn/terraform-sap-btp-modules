@@ -17,7 +17,7 @@ No modules.
 | Name | Type |
 | ---- | ---- |
 | [cloudfoundry_org_role.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
-| [cloudfoundry_user.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/user) | resource |
+| [cloudfoundry_user_cf.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/user_cf) | resource |
 
 ## Inputs
 
