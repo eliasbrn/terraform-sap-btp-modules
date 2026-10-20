@@ -59,14 +59,10 @@ resource "cloudfoundry_org_role" "this" {
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
-resource "cloudfoundry_user" "gmail" {
-  username  = "braun.elias@gmail.com"
-  origin    = var.origin
-}
 
 resource "cloudfoundry_org_role" "that" {
   username  = "braun.elias@gmail.com"
-  type      = "organization_user"
+  type      = "organization_auditor"
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
