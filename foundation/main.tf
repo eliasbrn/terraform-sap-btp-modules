@@ -61,11 +61,15 @@ resource "cloudfoundry_org_role" "this" {
 }
 
 
-resource "cloudfoundry_org_role" "that" {
-  username  = "braun.elias17@gmail.com"
-  type      = "organization_auditor"
-  origin    = "sap.ids"
-  org       = btp_subaccount_environment_instance.this.platform_id
+module "cf_users" {
+  source = "../cf/users"
+
+  cf_org_id = btp_subaccount_environment_instance.this.platform_id
+  origin    = var.origin
+
+  users = {
+    "braun.elias17@gmail.com"   = ["organization_manager"]
+  }
 }
 
 # --------------------------------

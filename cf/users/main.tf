@@ -11,7 +11,7 @@
 }
 
 # Create one Cloud Foundry user per email address
-resource "cloudfoundry_user" "this" {
+resource "cloudfoundry_user_cf" "this" {
   for_each = var.users
 
   username = each.key
