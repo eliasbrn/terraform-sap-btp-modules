@@ -1,3 +1,7 @@
+# --------------------------------
+# APP IDs müssen angepasst werden!
+# --------------------------------
+
 locals {
   
 }
@@ -13,27 +17,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_Administrator"
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Administrator"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Administrator"
     },
     {
       name                 = "Subaccount Admin"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Admin"
     },
     {
       name                 = "Subaccount Service Administrator"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Administrator"
     },
     {
       name                 = "User and Role Administrator"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_admin"
     }
   ]
@@ -50,27 +54,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Administrator"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Administrator"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Administrator"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_admin"
     }
   ]
@@ -84,27 +88,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_QA"
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Administrator"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Administrator"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -118,27 +122,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_PRD
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Administrator"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Administrator"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -155,27 +159,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Viewer" {
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Viewer"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Viewer"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -192,7 +196,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_CloudConnector_C_Administra
   roles = [
     {
       name                 = "Cloud Connector Administrator"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Administrator"
     }
   ]
@@ -209,27 +213,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Viewer"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Viewer"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -243,27 +247,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b6"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Viewer"
-      role_template_app_id = "destination-xsappname!b7"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Viewer"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b4"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b2"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -277,7 +281,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     }
   ]
@@ -294,27 +298,27 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Support"
   roles = [
     {
       name                 = "Cloud Connector Auditor"
-      role_template_app_id = "connectivity!b17"
+      role_template_app_id = "connectivity!b7"
       role_template_name   = "Cloud_Connector_Auditor"
     },
     {
       name                 = "Destination Viewer"
-      role_template_app_id = "destination-xsappname!b404"
+      role_template_app_id = "destination-xsappname!b62"
       role_template_name   = "Destination_Viewer"
     },
     {
       name                 = "Subaccount Service Auditor"
-      role_template_app_id = "service-manager!b8989"
+      role_template_app_id = "service-manager!b1476"
       role_template_name   = "Subaccount_Service_Auditor"
     },
     {
       name                 = "Subaccount Viewer"
-      role_template_app_id = "cis-local!b14"
+      role_template_app_id = "cis-local!b4"
       role_template_name   = "Subaccount_Viewer"
     },
     {
       name                 = "User and Role Auditor"
-      role_template_app_id = "xsuaa!t1"
+      role_template_app_id = "xsuaa!t8"
       role_template_name   = "xsuaa_auditor"
     }
   ]
@@ -331,12 +335,12 @@ resource "btp_subaccount_role_collection" "TRIAL_BRC_AuditViewer_R_View" {
   roles = [
     {
       name                 = "Auditlog_Auditor"
-      role_template_app_id = "auditlog-management!b6316"
+      role_template_app_id = "auditlog-management!b1187"
       role_template_name   = "Auditlog_Auditor"
     },
     {
       name                 = "Auditlog_Auditor"
-      role_template_app_id = "auditlog-viewer!t6316"
+      role_template_app_id = "auditlog-viewer-initial-content!t1187" # ANDERE APP ID 
       role_template_name   = "Auditlog_Auditor"
     }
   ]
