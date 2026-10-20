@@ -32,6 +32,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_subaccount_id"></a> [subaccount\_id](#input\_subaccount\_id) | ID of the Subaccount | `string` | n/a | yes |
 | <a name="input_subaccount_stage"></a> [subaccount\_stage](#input\_subaccount\_stage) | Stage of the Subaccount | `string` | n/a | yes |
 
 ## Outputs
