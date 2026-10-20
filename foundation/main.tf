@@ -61,7 +61,7 @@ resource "cloudfoundry_org_role" "this" {
 
 
 resource "cloudfoundry_org_role" "that" {
-  username  = "braun.elias@gmail.com"
+  username  = "braun.elias17@gmail.com"
   type      = "organization_auditor"
   org       = btp_subaccount_environment_instance.this.platform_id
 }
