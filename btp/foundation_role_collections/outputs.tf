@@ -35,9 +35,9 @@
 # # --------------------------------
 # # Cloud Connector Administrator
 # # --------------------------------
-# output "TRIAL_PRC_CloudConnector_C_Administrator" {
+# output "TRIAL_PRC_Subaccount_CloudConnector_C_Administrator" {
 #   description = "Name of TRIAL_PRC_CloudConnector_C_Administrator Role Collection"
-#   value       = btp_subaccount_role_collection.TRIAL_PRC_CloudConnector_C_Administrator.name
+#   value       = btp_subaccount_role_collection.TRIAL_PRC_Subaccount_CloudConnector_C_Administrator.name
 # }
 
 # # --------------------------------

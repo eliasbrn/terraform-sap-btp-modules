@@ -194,7 +194,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Viewer" {
 # --------------------------------
 # Cloud Connector Administrator
 # --------------------------------
-resource "btp_subaccount_role_collection" "TRIAL_PRC_CloudConnector_C_Administrator" {
+resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_CloudConnector_C_Administrator" {
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_CloudConnector_C_Administrator"
   description   = "Cloud Connector Administrator"
