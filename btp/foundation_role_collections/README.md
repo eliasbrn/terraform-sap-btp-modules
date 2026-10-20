@@ -17,11 +17,11 @@ No modules.
 | Name | Type |
 | ---- | ---- |
 | [btp_subaccount_role_collection.TRIAL_BRC_AuditViewer_R_View](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
-| [btp_subaccount_role_collection.TRIAL_PRC_CloudConnector_C_Administrator](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_Administrator](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_DEV](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_PRD](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_QA](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
+| [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_CloudConnector_C_Administrator](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_DEV](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_PRD](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_QA](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
