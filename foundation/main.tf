@@ -56,7 +56,7 @@ resource "cloudfoundry_space" "foundation" {
 resource "cloudfoundry_org_role" "this" {
   username  = "elias.braun@audi.de"
   type      = "organization_manager"
-  origin    = var.orign
+  origin    = var.origin
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
