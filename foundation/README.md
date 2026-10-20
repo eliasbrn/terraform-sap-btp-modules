@@ -26,7 +26,6 @@ No requirements.
 | [cloudfoundry_org_role.that](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
 | [cloudfoundry_org_role.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
 | [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
-| [cloudfoundry_user.gmail](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/user) | resource |
 
 ## Inputs
 
