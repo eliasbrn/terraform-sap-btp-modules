@@ -25,7 +25,7 @@ No requirements.
 | [btp_subaccount.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount) | resource |
 | [btp_subaccount_environment_instance.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_environment_instance) | resource |
 | [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
-| [cloudfoundry_space_quota.foundation_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
+| [cloudfoundry_space_quota.foundation_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
 
 ## Inputs
 
