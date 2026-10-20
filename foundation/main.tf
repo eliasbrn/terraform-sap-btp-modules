@@ -77,6 +77,8 @@ module "entitlements" {
 # --------------------------------
 module "foundation_role_collections" {
   source = "../btp/foundation_role_collections"
+
+  subaccount_id    = btp_subaccount.this.id
   subaccount_stage = var.subaccount_stage
 }
 
