@@ -37,16 +37,4 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-| ---- | ----------- |
-| <a name="output_TRIAL_BRC_AuditViewer_R_View"></a> [TRIAL\_BRC\_AuditViewer\_R\_View](#output\_TRIAL\_BRC\_AuditViewer\_R\_View) | Name of TRIAL\_BRC\_AuditViewer\_R\_View Role Collection |
-| <a name="output_TRIAL_PRC_CloudConnector_C_Administrator"></a> [TRIAL\_PRC\_CloudConnector\_C\_Administrator](#output\_TRIAL\_PRC\_CloudConnector\_C\_Administrator) | Name of TRIAL\_PRC\_CloudConnector\_C\_Administrator Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_C_Administrator"></a> [TRIAL\_PRC\_Subaccount\_C\_Administrator](#output\_TRIAL\_PRC\_Subaccount\_C\_Administrator) | Name of TRIAL\_PRC\_Subaccount\_C\_Administrator Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_C_LightAdmin_DEV"></a> [TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_DEV](#output\_TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_DEV) | Name of TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_DEV Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_C_LightAdmin_PRD"></a> [TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_PRD](#output\_TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_PRD) | Name of TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_PRD Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_C_LightAdmin_QA"></a> [TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_QA](#output\_TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_QA) | Name of TRIAL\_PRC\_Subaccount\_C\_LightAdmin\_QA Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_R_Space_Developer_DEV"></a> [TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_DEV](#output\_TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_DEV) | Name of TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_DEV Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_R_Space_Developer_PRD"></a> [TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_PRD](#output\_TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_PRD) | Name of TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_PRD Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_R_Space_Developer_QA"></a> [TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_QA](#output\_TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_QA) | Name of TRIAL\_PRC\_Subaccount\_R\_Space\_Developer\_QA Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_R_Space_Support"></a> [TRIAL\_PRC\_Subaccount\_R\_Space\_Support](#output\_TRIAL\_PRC\_Subaccount\_R\_Space\_Support) | Name of TRIAL\_PRC\_Subaccount\_R\_Space\_Support Role Collection |
-| <a name="output_TRIAL_PRC_Subaccount_R_Viewer"></a> [TRIAL\_PRC\_Subaccount\_R\_Viewer](#output\_TRIAL\_PRC\_Subaccount\_R\_Viewer) | Name of TRIAL\_PRC\_Subaccount\_R\_Viewer Role Collection |
+No outputs.
