@@ -40,36 +40,20 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-# module "cf_users" {
-#   source = "../cf/users"
-
-#   cf_org_id = btp_subaccount_environment_instance.this.platform_id
-#   origin    = var.origin
-
-#   users = {
-#     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
-#     "braun.elias17@gmail.com"   = ["organization_user"],
-#     "elias.braun@audi.de"       = ["organization_auditor"]
-#   }
-# }
-
-resource "cloudfoundry_org_role" "this" {
-  username  = "elias.braun@audi.de"
-  type      = "organization_manager"
-  origin    = var.origin
-  org       = btp_subaccount_environment_instance.this.platform_id
-}
-
-
 module "cf_users" {
   source = "../cf/users"
 
   cf_org_id = btp_subaccount_environment_instance.this.platform_id
   origin    = var.origin
+
   users = {
-    "braun.elias@gmail.com"   = ["organization_auditor"]
+    "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
+    "braun.elias17@gmail.com"   = ["organization_user"],
+    "elias.braun@audi.de"       = ["organization_auditor"]
   }
 }
+
+
 
 # --------------------------------
 # Entitlements
