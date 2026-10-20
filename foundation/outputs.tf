@@ -62,7 +62,3 @@ output "list_entitlements" {
 # --------------------------------
 # Role Collections
 # --------------------------------
-output "role_collection_name" {
-  description = "Name of the Role Collection"
-  value =  btp_subaccount_role_collection.demo.name
-}
