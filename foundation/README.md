@@ -14,6 +14,7 @@ No requirements.
 | Name | Source | Version |
 | ---- | ------ | ------- |
 | <a name="module_btp_role_collection_assignments"></a> [btp\_role\_collection\_assignments](#module\_btp\_role\_collection\_assignments) | SAP/sap-btp-role-collection-assignments/btp | 1.0.1 |
+| <a name="module_cf_users"></a> [cf\_users](#module\_cf\_users) | ../cf/users | n/a |
 | <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
 
 ## Resources
@@ -23,7 +24,6 @@ No requirements.
 | [btp_subaccount.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount) | resource |
 | [btp_subaccount_environment_instance.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_environment_instance) | resource |
 | [btp_subaccount_role_collection.demo](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
-| [cloudfoundry_org_role.that](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
 | [cloudfoundry_org_role.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
 | [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
 
