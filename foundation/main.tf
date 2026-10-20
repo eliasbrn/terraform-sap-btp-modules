@@ -56,7 +56,7 @@ resource "cloudfoundry_space" "foundation" {
 resource "cloudfoundry_org_role" "this" {
   username  = "elias.braun@audi.de"
   type      = "organization_manager"
-  origin    = var.origin
+  origin    = var.orign
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
@@ -67,7 +67,7 @@ module "cf_users" {
   cf_org_id = btp_subaccount_environment_instance.this.platform_id
   origin    = var.origin
   users = {
-    "braun.elias@gmail.com"   = ["organization_manager"]
+    "braun.elias@gmail.com"   = ["organization_manager", "organization_auditor"]
   }
 }
 
