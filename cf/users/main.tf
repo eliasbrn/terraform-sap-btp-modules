@@ -27,5 +27,6 @@ resource "cloudfoundry_org_role" "this" {
 
   username = each.value.email
   type = each.value.role
+  origin   = var.origin
   org = var.cf_org_id
 }

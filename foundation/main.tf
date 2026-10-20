@@ -65,8 +65,7 @@ module "cf_users" {
   source = "../cf/users"
 
   cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin    = var.origin
-
+  origin    = "sap.ids"
   users = {
     "braun.elias17@gmail.com"   = ["organization_manager"]
   }
