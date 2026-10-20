@@ -20,7 +20,7 @@ resource "btp_subaccount" "this" {
 }
 
 # --------------------------------
-# Cloud Foundry & Spaces
+# Cloud Foundry & Org User Roles
 # --------------------------------
 resource "btp_subaccount_environment_instance" "this" {
   subaccount_id    = btp_subaccount.this.id
@@ -47,6 +47,9 @@ module "org_role_assignments" {
   }
 }
 
+# --------------------------------
+# Cloud Foundry Spaces & Qutoas
+# --------------------------------
 resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
   org       = btp_subaccount_environment_instance.this.platform_id
@@ -63,6 +66,24 @@ resource "cloudfoundry_space_quota" "foundation_space_quota" {
   allow_paid_service_plans = true
   org                      = btp_subaccount_environment_instance.this.platform_id
   spaces                   = [cloudfoundry_space.foundation.id]
+}
+
+resource "cloudfoundry_space" "project" {
+  name      = local.subaccount_name
+  org       = btp_subaccount_environment_instance.this.platform_id
+  labels    = { purpose : "${var.subaccount_stage}" }
+}
+
+resource "cloudfoundry_space_quota" "project_space_quota" {
+  name                     = local.subaccount_name
+  total_memory             = 8192
+  total_routes             = 50
+  total_services           = 50
+  instance_memory          = 8192
+  total_app_instances      = 20
+  allow_paid_service_plans = true
+  org                      = btp_subaccount_environment_instance.this.platform_id
+  spaces                   = [cloudfoundry_space.project.id]
 }
 
 
