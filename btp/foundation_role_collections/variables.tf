@@ -1,3 +1,8 @@
+variable "subaccount_id" {
+    description = "ID of the Subaccount"
+    type = string
+}
+
 variable "subaccount_stage" {
   description = "Stage of the Subaccount"
    type = string

@@ -6,7 +6,7 @@ locals {
 # Subaccount Administrator
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_Administrator" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_Administrator"
   description   = "Administrative access to the subaccount: Manage destination configurations, certificates, and subaccount trust via the Destination editor in the SAP BTP cockpit. Read-write authorizations for trusted identity providers, role collections, roles, and users at subaccount level. Read-write authorizations for viewing subaccount entitlements and for creating and deleting environment instances. Administrative access to service brokers and environments at subaccount level. View the data transmission tunnels used by the Cloud Connector to communicate with back-end systems. Manage apps, services, and space-scoped service brokers in a space."
 
@@ -43,7 +43,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_Administrator"
 # Subaccount Light-Admin
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_DEV"
   description   = "Limited administrative access to the subaccount: Manage destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. Manage apps, services and space-scoped service brokers in a space. Includes read authorizations for viewing subaccount entitlement. Read-only access to service brokers and environments on a subaccount level."
 
@@ -77,7 +77,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_QA" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_QA"
   description   = "Limited administrative access to the subaccount: Manage destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. Manage apps, services and space-scoped service brokers in a space. Includes read authorizations for viewing subaccount entitlement. Read-only access to service brokers and environments on a subaccount level."
 
@@ -111,7 +111,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_QA"
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_PRD" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_PRD"
   description   = "Limited administrative access to the subaccount: Manage destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. Manage apps, services and space-scoped service brokers in a space. Includes read authorizations for viewing subaccount entitlement. Read-only access to service brokers and environments on a subaccount level."
 
@@ -148,7 +148,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_PRD
 # Subaccount Viewer
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Viewer" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Viewer"
   description   = "Read-only access to the subaccount"
 
@@ -185,7 +185,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Viewer" {
 # Cloud Connector Administrator
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_CloudConnector_C_Administrator" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_CloudConnector_C_Administrator"
   description   = "Cloud Connector Administrator"
 
@@ -202,7 +202,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_CloudConnector_C_Administra
 # Space Developer
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_DEV" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_DEV"
   description   = "Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. View destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for viewing subaccount entitlements and for creating and deleting environment instances. Read-only access to service brokers and environments on a subaccount level."
 
@@ -236,7 +236,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_QA" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_QA"
   description   = "Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. View destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for viewing subaccount entitlements and for creating and deleting environment instances. Read-only access to service brokers and environments on a subaccount level."
 
@@ -270,7 +270,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_PRD" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_PRD"
   description   = "View the data transmission tunnels used by the Cloud connector to communicate with back-end systems."
 
@@ -287,7 +287,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
 # Space Support
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Support" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Support"
   description   = "Read authorizations for trusted identity providers and users. View the data transmission tunnels used by the Cloud connector to communicate with back-end systems. View destination configurations, certificates and subaccount trust via the Destination editor in the SAP BTP cockpit. Read authorizations for viewing subaccount entitlements and for creating and deleting environment instances. Read-only access to service brokers and environments on a subaccount level."
 
@@ -324,7 +324,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Support"
 # Audit Viewer
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_BRC_AuditViewer_R_View" {
-  subaccount_id = btp_subaccount.this.id
+  subaccount_id = var.subaccount_id
   name          = "TRIAL_BRC_AuditViewer_R_View"
   description   = "Allows extension developers to deploy simple extensions."
 
