@@ -95,12 +95,16 @@ module "btp_role_collection_assignments" {
 
   role_collection_assignments_by_user = [
     {
-      role_collection_name = "Subaccount Administrator"
+      role_collection_name = "TRIAL_PRC_Subaccount_C_Administrator"
       user_names           = ["braun_elias@gmx.de"]
     },
     {
-      role_collection_name = "AUDI_PRC_Subaccount_R_Viewer"
-      user_names           = ["braun_elias@gmx.de", "braun.elias17@gmail.com"]
+      role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Developer_DEV"
+      user_names           = ["braun_elias@gmx.de", "elias.braun@audi.de"]
+    },
+    {
+      role_collection_name = "TRIAL_PRC_Subaccount_R_Viewer"
+      user_names           = ["elias.braun@audi.de", "braun.elias17@gmail.com"]
     }
   ]
 }
