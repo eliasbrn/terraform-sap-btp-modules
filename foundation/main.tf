@@ -56,6 +56,7 @@ resource "cloudfoundry_space" "foundation" {
 resource "cloudfoundry_org_role" "this" {
   username  = "elias.braun@audi.de"
   type      = "organization_manager"
+  origin    = "sap.ids"
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
@@ -63,6 +64,7 @@ resource "cloudfoundry_org_role" "this" {
 resource "cloudfoundry_org_role" "that" {
   username  = "braun.elias17@gmail.com"
   type      = "organization_auditor"
+  origin    = "sap.ids"
   org       = btp_subaccount_environment_instance.this.platform_id
 }
 
