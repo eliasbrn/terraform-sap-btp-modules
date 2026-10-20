@@ -53,7 +53,7 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-resource "cloudfoundry_space_quota" "foundation_quota" {
+resource "cloudfoundry_space_quota" "foundation_space_quota" {
   name                     = "Foundation"
   total_memory             = 1024
   total_routes             = 10
@@ -62,7 +62,7 @@ resource "cloudfoundry_space_quota" "foundation_quota" {
   total_app_instances      = 10
   allow_paid_service_plans = true
   org                      = btp_subaccount_environment_instance.this.platform_id
-  spaces                   = cloudfoundry_space.foundation.id
+  spaces                   = [cloudfoundry_space.foundation.id]
 }
 
 
