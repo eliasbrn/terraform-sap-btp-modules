@@ -58,7 +58,7 @@ resource "cloudfoundry_space" "foundation" {
 }
 
 resource "cloudfoundry_space_role" "provisioner" {
-  depends_on = [ module.org_role_assignment, cloudfoundry_space.foundation ]
+  depends_on = [ module.org_role_assignments, cloudfoundry_space.foundation ]
 
   username = "braun_elias@gmx.de"
   type     = "space_manager"
@@ -68,7 +68,7 @@ resource "cloudfoundry_space_role" "provisioner" {
 }
 
 module "space_role_assignments_foundation" {
-  depends_on = [ module.org_role_assignment, cloudfoundry_space.foundation ]
+  depends_on = [ module.org_role_assignments, cloudfoundry_space.foundation ]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
