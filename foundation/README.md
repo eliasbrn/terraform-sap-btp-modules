@@ -55,6 +55,7 @@ No requirements.
 | <a name="output_cf_org_name"></a> [cf\_org\_name](#output\_cf\_org\_name) | Name of the Cloud Foundry Org |
 | <a name="output_list_entitlements"></a> [list\_entitlements](#output\_list\_entitlements) | List of all Entitlements |
 | <a name="output_org_members"></a> [org\_members](#output\_org\_members) | All Org Members with their Org Roles |
+| <a name="output_origin"></a> [origin](#output\_origin) | The origin of the identity provider |
 | <a name="output_space_foundation_id"></a> [space\_foundation\_id](#output\_space\_foundation\_id) | ID of the Space |
 | <a name="output_space_foundation_members"></a> [space\_foundation\_members](#output\_space\_foundation\_members) | All Space Members with their Space Roles |
 | <a name="output_space_foundation_name"></a> [space\_foundation\_name](#output\_space\_foundation\_name) | Name of the Space |
