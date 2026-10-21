@@ -43,13 +43,14 @@ module "org_role_assignments" {
   org_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
     "braun.elias17@gmail.com"   = ["organization_user"],
-    "elias.braun@audi.de"       = ["organization_auditor"]
+    "elias.braun@audi.de"       = ["organization_user"]
   }
 }
 
 # --------------------------------
 # Cloud Foundry Spaces & Qutoas
 # --------------------------------
+# Foundation-Space
 resource "cloudfoundry_space" "foundation" {
   name      = "Foundation"
   org       = btp_subaccount_environment_instance.this.platform_id
@@ -58,6 +59,7 @@ resource "cloudfoundry_space" "foundation" {
 
 
 module "space_role_assignments_foundation" {
+  depends_on = [ module.org_role_assignments ]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
@@ -69,7 +71,6 @@ module "space_role_assignments_foundation" {
     "elias.braun@audi.de"       = ["space_auditor"]
   }
 }
-
 
 resource "cloudfoundry_space_quota" "foundation_space_quota" {
   depends_on               = [ cloudfoundry_space.foundation ]
@@ -85,10 +86,23 @@ resource "cloudfoundry_space_quota" "foundation_space_quota" {
   spaces                   = [cloudfoundry_space.foundation.id]
 }
 
+# Project-Space
 resource "cloudfoundry_space" "project" {
   name      = local.subaccount_name
   org       = btp_subaccount_environment_instance.this.platform_id
   labels    = { purpose : "${var.subaccount_stage}" }
+}
+
+module "space_role_assignments_foundation" {
+  depends_on = [ module.org_role_assignments ]
+  source  = "../cf/space_role_assignments"
+
+  space   = cloudfoundry_space.project.id
+  origin  = var.origin
+
+  space_role_assignments_by_user = {
+    "braun_elias@gmx.de"        = ["space_manager"]
+  }
 }
 
 resource "cloudfoundry_space_quota" "project_space_quota" {
