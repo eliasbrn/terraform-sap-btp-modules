@@ -56,23 +56,17 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-resource "cloudfoundry_space_role" "test" {
-  username = "braun.elias17@gmail.com"
-  origin   = var.origin
-  type     = "space_manager"
-  space    = cloudfoundry_space.foundation.id
-}
 
 module "space_role_assignments_foundation" {
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
-  origin = var.origin
+  origin  = var.origin
 
   space_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["space_manager", "space_developer"],
-    "braun.elias17@gmail.com"   = ["space_auditor"],
-    "elias.braun@audi.de"       = ["space_supporter"]
+    "braun.elias17@gmail.com"   = ["space_supporter"],
+    "elias.braun@audi.de"       = ["space_auditor"]
   }
 }
 
