@@ -31,7 +31,6 @@ No requirements.
 | [cloudfoundry_space.project](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
 | [cloudfoundry_space_quota.foundation_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
 | [cloudfoundry_space_quota.project_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
-| [cloudfoundry_space_role.test](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_role) | resource |
 
 ## Inputs
 
