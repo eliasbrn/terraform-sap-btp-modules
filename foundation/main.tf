@@ -162,7 +162,7 @@ resource "btp_subaccount_subscription" "auditlog_viewer" {
 # Service Instances
 # --------------------------------
 resource "cloudfoundry_service_instance" "auditlog_management" {
-  depends_on = [ module.entitlements, module.org_role_assignments]
+  depends_on = [ module.entitlements, cloudfoundry_space_role.provisioner]
 
   name                  = "AuditLog-API-Access"
   service_offering_name = "auditlog-management"
@@ -224,8 +224,8 @@ resource "btp_subaccount_trust_configuration" "this" {
   origin                   = "axafcftur"
 
   identity_provider        = "axafcftur.trial-accounts.ondemand.com"
-  domain                   = "axafcftur.accounts.ondemand.com"
-  link_text                = "axafcftur.accounts.ondemand.com"
+  domain                   = "axafcftur.trial-accounts.ondemand.com"
+  link_text                = "axafcftur.trial-accounts.ondemand.com"
  
   status                   = "active"
   #auto_create_shadow_users = true
