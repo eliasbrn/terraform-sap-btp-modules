@@ -3,6 +3,7 @@ locals {
   subaccount_subdomain  = join("-", [lower(replace("trial-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
   usage                 = var.subaccount_stage == "PRD" ? "USED_FOR_PRODUCTION" : "NOT_USED_FOR_PRODUCTION"
   cf_org_instance       = join("-", [lower(replace("trial-cf-${var.landscape_name}-${var.subaccount_stage}", " ", "-"))])
+  user_origin           = "${var.origin}-platform"
 }
 
 # --------------------------------
@@ -38,7 +39,7 @@ module "org_role_assignments" {
   source     = "../cf/org_role_assignments"
 
   cf_org_id  = btp_subaccount_environment_instance.this.platform_id
-  origin     = var.origin
+  origin     = local.user_origin
 
   org_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
@@ -72,7 +73,7 @@ module "space_role_assignments_foundation" {
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
-  origin  = var.origin
+  origin  = local.user_origin
 
   space_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["space_manager", "space_developer"],
@@ -107,7 +108,7 @@ module "space_role_assignments_project" {
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.project.id
-  origin  = var.origin
+  origin  = local.user_origin
 
   space_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["space_manager"]
@@ -190,7 +191,7 @@ module "btp_role_collection_assignments" {
   depends_on = [module.foundation_role_collections]
 
   subaccount_id     = btp_subaccount.this.id
-  default_origin_id = var.origin
+  default_origin_id = local.user_origin
 
   role_collection_assignments_by_user = [
     {
@@ -219,13 +220,13 @@ module "btp_role_collection_assignments" {
 resource "btp_subaccount_trust_configuration" "this" {
   subaccount_id            = btp_subaccount.this.id
 
-  name                     = "IAS-axafcftur"
-  description              = "TRIAL IAS live Tenant - axafcftur"
-  origin                   = "axafcftur"
+  name                     = "IAS-${var.origin}"
+  description              = "TRIAL IAS live Tenant - ${var.origin}"
+  origin                   =  var.origin
 
-  identity_provider        = "axafcftur.trial-accounts.ondemand.com"
-  domain                   = "axafcftur.trial-accounts.ondemand.com"
-  link_text                = "axafcftur.trial-accounts.ondemand.com"
+  identity_provider        = "${var.origin}.trial-accounts.ondemand.com"
+  domain                   = "${var.origin}.trial-accounts.ondemand.com"
+  link_text                = "${var.origin}.trial-accounts.ondemand.com"
  
   status                   = "active"
   #auto_create_shadow_users = true
