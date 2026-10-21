@@ -133,7 +133,8 @@ module "entitlements" {
     "application-logs"       = ["standard"],
     "application-logs"       = ["lite"],
     "connectivity"           = ["lite"],
-    "destination"            = ["lite"]
+    "destination"            = ["lite"],
+    "auditlog-viewer"        = ["free"]
  }
 }
 
@@ -152,7 +153,7 @@ resource "btp_subaccount_subscription" "auditlog_viewer" {
 # Service Instances
 # --------------------------------
 resource "cloudfoundry_service_instance" "auditlog_management" {
-  depends_on = [ module.entitlements ]
+  depends_on = [ module.entitlements, module.org_role_assignments]
 
   name                  = "AuditLog-API-Access"
   service_offering_name = "auditlog-management"
