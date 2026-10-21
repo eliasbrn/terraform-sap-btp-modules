@@ -93,7 +93,7 @@ resource "cloudfoundry_space" "project" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
-module "space_role_assignments_foundation" {
+module "space_role_assignments_project" {
   depends_on = [ module.org_role_assignments ]
   source  = "../cf/space_role_assignments"
 
