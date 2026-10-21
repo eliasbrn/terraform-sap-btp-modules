@@ -18,6 +18,7 @@ No requirements.
 | <a name="module_foundation_role_collections"></a> [foundation\_role\_collections](#module\_foundation\_role\_collections) | ../btp/foundation_role_collections | n/a |
 | <a name="module_org_role_assignments"></a> [org\_role\_assignments](#module\_org\_role\_assignments) | ../cf/org_role_assignments | n/a |
 | <a name="module_space_role_assignments_foundation"></a> [space\_role\_assignments\_foundation](#module\_space\_role\_assignments\_foundation) | ../cf/space_role_assignments | n/a |
+| <a name="module_space_role_assignments_project"></a> [space\_role\_assignments\_project](#module\_space\_role\_assignments\_project) | ../cf/space_role_assignments | n/a |
 
 ## Resources
 
