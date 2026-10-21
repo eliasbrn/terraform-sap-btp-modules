@@ -199,7 +199,7 @@ module "btp_role_collection_assignments" {
       user_names           = ["braun_elias@gmx.de"]
     },
     {
-      role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Developer_PRD"
+      role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Support"
       user_names           = ["braun_elias@gmx.de", "elias.braun@audi.de"]
     },
     {
