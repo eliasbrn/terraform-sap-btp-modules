@@ -35,10 +35,10 @@ resource "btp_subaccount_environment_instance" "this" {
 }
 
 module "org_role_assignments" {
-  source = "../cf/org_role_assignments"
+  source     = "../cf/org_role_assignments"
 
-  cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin    = var.origin
+  cf_org_id  = btp_subaccount_environment_instance.this.platform_id
+  origin     = var.origin
 
   org_role_assignments_by_user = {
     "braun_elias@gmx.de"        = ["organization_manager", "organization_user"],
@@ -61,6 +61,19 @@ resource "cloudfoundry_space_role" "test" {
   origin   = var.origin
   type     = "space_manager"
   space    = cloudfoundry_space.foundation.id
+}
+
+module "space_role_assignments_foundation" {
+  source  = "../cf/space_role_assignments"
+
+  space   = cloundfoundry_space.foundation.id
+  origin = var.origin
+
+  space_role_assignments_by_user = {
+    "braun_elias@gmx.de"        = ["space_manager", "space_developer"],
+    "braun.elias17@gmail.com"   = ["space_auditor"],
+    "elias.braun@audi.de"       = ["space_supporter"]
+  }
 }
 
 
