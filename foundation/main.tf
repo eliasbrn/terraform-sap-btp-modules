@@ -120,7 +120,6 @@ resource "cloudfoundry_space_quota" "project_space_quota" {
 }
 
 
-
 # --------------------------------
 # Entitlements
 # --------------------------------
@@ -203,4 +202,8 @@ module "btp_role_collection_assignments" {
 
   ]
 }
+
+# --------------------------------
+# Role Collection Assignments
+# --------------------------------
 
