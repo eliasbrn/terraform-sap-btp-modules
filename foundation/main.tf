@@ -221,7 +221,7 @@ resource "btp_subaccount_trust_configuration" "this" {
 
   name                     = "IAS-axafcftur"
   description              = "TRIAL IAS live Tenant - axafcftur"
-  origin                   =  var.origin
+  origin                   = "axafcftur"
 
   identity_provider        = "axafcftur.trial-accounts.ondemand.com"
   domain                   = "axafcftur.accounts.ondemand.com"
