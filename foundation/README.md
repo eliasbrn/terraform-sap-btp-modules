@@ -39,7 +39,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_landscape_name"></a> [landscape\_name](#input\_landscape\_name) | Name of the Landscape | `string` | n/a | yes |
-| <a name="input_origin"></a> [origin](#input\_origin) | Origin used for all created users | `string` | `"axafcftur"` | no |
+| <a name="input_origin"></a> [origin](#input\_origin) | Origin used for all created users | `string` | `"axafcftur-platform"` | no |
 | <a name="input_subaccount_parent"></a> [subaccount\_parent](#input\_subaccount\_parent) | Directory in which the subaccount is created | `string` | `null` | no |
 | <a name="input_subaccount_region"></a> [subaccount\_region](#input\_subaccount\_region) | Region of the Subaccount | `string` | n/a | yes |
 | <a name="input_subaccount_stage"></a> [subaccount\_stage](#input\_subaccount\_stage) | Stage of the Subaccount | `string` | n/a | yes |
