@@ -98,7 +98,7 @@ resource "cloudfoundry_space_quota" "foundation_space_quota" {
 
 # Project-Space
 resource "cloudfoundry_space" "project" {
-  name      = local.subaccount_name
+  name      = var.landscape_name
   org       = btp_subaccount_environment_instance.this.platform_id
   labels    = { purpose : "${var.subaccount_stage}" }
 }
