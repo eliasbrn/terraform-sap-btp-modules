@@ -58,6 +58,7 @@ resource "cloudfoundry_space" "foundation" {
 
 resource "cloudfoundry_space_role" "test" {
   username = "braun.elias17@gmail.com"
+  origin   = var.orgin
   type     = "space_manager"
   space    = cloudfoundry_space.foundation.id
 }
