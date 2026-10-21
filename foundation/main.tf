@@ -56,6 +56,13 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
+resource "cloudfoundry_space_role" "test" {
+  username = "braun.elias17@gmail.com"
+  type     = "space_manager"
+  space    = cloudfoundry_space.foundation.id
+}
+
+
 resource "cloudfoundry_space_quota" "foundation_space_quota" {
   depends_on               = [ cloudfoundry_space.foundation ]
 
