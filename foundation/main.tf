@@ -57,9 +57,18 @@ resource "cloudfoundry_space" "foundation" {
   labels    = { purpose : "${var.subaccount_stage}" }
 }
 
+resource "cloudfoundry_space_role" "provisioner" {
+  depends_on = [ module.org_role_assignment, cloudfoundry_space.foundation ]
+
+  username = "braun_elias@gmx.de"
+  type     = "space_manager"
+  space    = cloudfoundry_space.foundation.id
+  origin   = "sap.ids"
+  
+}
 
 module "space_role_assignments_foundation" {
-  depends_on = [ module.org_role_assignments ]
+  depends_on = [ module.org_role_assignment, cloudfoundry_space.foundation ]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
@@ -94,7 +103,7 @@ resource "cloudfoundry_space" "project" {
 }
 
 module "space_role_assignments_project" {
-  depends_on = [ module.org_role_assignments ]
+  depends_on = [ module.org_role_assignments, cloudfoundry_space.project]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.project.id
