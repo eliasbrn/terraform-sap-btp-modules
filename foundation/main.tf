@@ -66,7 +66,7 @@ resource "cloudfoundry_space_role" "test" {
 module "space_role_assignments_foundation" {
   source  = "../cf/space_role_assignments"
 
-  space   = cloundfoundry_space.foundation.id
+  space   = cloudfoundry_space.foundation.id
   origin = var.origin
 
   space_role_assignments_by_user = {
