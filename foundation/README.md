@@ -47,12 +47,19 @@ No requirements.
 
 | Name | Description |
 | ---- | ----------- |
+| <a name="output_auditlog_management_id"></a> [auditlog\_management\_id](#output\_auditlog\_management\_id) | ID of the Auditlog Management Service Instance |
+| <a name="output_auditlog_viewer_id"></a> [auditlog\_viewer\_id](#output\_auditlog\_viewer\_id) | ID of the Audit Log Viewer Servie Subscription |
 | <a name="output_cf_api_url"></a> [cf\_api\_url](#output\_cf\_api\_url) | API URL of the Cloud Foundry Organization |
 | <a name="output_cf_org_id"></a> [cf\_org\_id](#output\_cf\_org\_id) | ID of the Cloud Foundry Organization |
 | <a name="output_cf_org_name"></a> [cf\_org\_name](#output\_cf\_org\_name) | Name of the Cloud Foundry Org |
 | <a name="output_list_entitlements"></a> [list\_entitlements](#output\_list\_entitlements) | List of all Entitlements |
+| <a name="output_org_members"></a> [org\_members](#output\_org\_members) | All Org Members with their Org Roles |
 | <a name="output_space_foundation_id"></a> [space\_foundation\_id](#output\_space\_foundation\_id) | ID of the Space |
+| <a name="output_space_foundation_members"></a> [space\_foundation\_members](#output\_space\_foundation\_members) | All Space Members with their Space Roles |
 | <a name="output_space_foundation_name"></a> [space\_foundation\_name](#output\_space\_foundation\_name) | Name of the Space |
+| <a name="output_space_project_id"></a> [space\_project\_id](#output\_space\_project\_id) | ID of the Space |
+| <a name="output_space_project_members"></a> [space\_project\_members](#output\_space\_project\_members) | All Space Members with their Space Roles |
+| <a name="output_space_project_name"></a> [space\_project\_name](#output\_space\_project\_name) | Name of the Space |
 | <a name="output_subaccount_id"></a> [subaccount\_id](#output\_subaccount\_id) | ID of the Subaccount |
 | <a name="output_subaccount_name"></a> [subaccount\_name](#output\_subaccount\_name) | Name of the subaccount |
 | <a name="output_subaccount_subdomain"></a> [subaccount\_subdomain](#output\_subaccount\_subdomain) | Subdomain of the subaccount |
