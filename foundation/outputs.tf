@@ -92,3 +92,11 @@ output "auditlog_management_id" {
   description = "ID of the Auditlog Management Service Instance"
   value = cloudfoundry_service_instance.auditlog_management.id
 }
+
+# --------------------------------
+# Trust Configuration
+# --------------------------------
+output "origin" {
+  description = "The origin of the identity provider"
+  value = btp_subaccount_trust_configuration.this.origin
+}
