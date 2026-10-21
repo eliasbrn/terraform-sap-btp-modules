@@ -37,6 +37,6 @@ variable "subaccount_parent" {
 
 variable "origin" {
   description = "Origin used for all created users"
-  default = "axafcftur-platform"
+  default = "axafcftur"
   type = string
 }

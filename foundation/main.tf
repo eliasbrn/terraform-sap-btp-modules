@@ -204,6 +204,20 @@ module "btp_role_collection_assignments" {
 }
 
 # --------------------------------
-# Role Collection Assignments
+# Trust Configuration
 # --------------------------------
+resource "btp_subaccount_trust_configuration" "this" {
+  subaccount_id            = btp_subaccount.this.id
 
+  name                     = "IAS-${var.origin}"
+  description              = "TRIAL IAS live Tenant - ${var.origin}"
+  origin                   =  var.origin
+
+  identity_provider        = "${var.origin}.trial-accounts.ondemand.com"
+  domain                   = "${var.origin}.accounts.ondemand.com"
+  link_text                = "${var.origin}.accounts.ondemand.com"
+ 
+  status                   = "active"
+  #auto_create_shadow_users = true
+  #available_for_user_logon = true
+}
