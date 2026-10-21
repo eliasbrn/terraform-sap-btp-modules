@@ -61,7 +61,7 @@ resource "cloudfoundry_space_role" "provisioner" {
   depends_on = [ module.org_role_assignments, cloudfoundry_space.foundation ]
 
   username = "braun_elias@gmx.de"
-  type     = "space_manager"
+  type     = "space_developer"
   space    = cloudfoundry_space.foundation.id
   origin   = "sap.ids"
   
