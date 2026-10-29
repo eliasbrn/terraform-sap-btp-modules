@@ -47,7 +47,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_Administrator"
 # Subaccount Light-Admin
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV" {
-  count = contains(["DEV", "SBX"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_DEV"
@@ -83,7 +83,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_DEV
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_QA" {
-  count = contains(["QA"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV", "QA"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_QA"
@@ -119,7 +119,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_QA"
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_LightAdmin_PRD" {
-  count = contains(["PRD"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV", "QA", "INT", "PRD"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_C_LightAdmin_PRD"
@@ -212,7 +212,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_CloudConnector_C
 # Space Developer
 # --------------------------------
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_DEV" {
-  count = contains(["DEV", "SBX"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_DEV"
@@ -248,7 +248,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_QA" {
-  count = contains(["QA"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV", "QA"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_QA"
@@ -284,7 +284,7 @@ resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Develope
 }
 
 resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_Space_Developer_PRD" {
-  count = contains(["PRD"], var.subaccount_stage) ? 1 : 0
+  count = contains(["SBX", "DEV", "QA", "INT", "PRD"], var.subaccount_stage) ? 1 : 0
 
   subaccount_id = var.subaccount_id
   name          = "TRIAL_PRC_Subaccount_R_Space_Developer_PRD"

@@ -196,7 +196,7 @@ module "btp_role_collection_assignments" {
   role_collection_assignments_by_user = [
     {
       role_collection_name = "TRIAL_PRC_Subaccount_C_Administrator"
-      user_names           = ["braun_elias@gmx.de"]
+      user_names           = ["braun_elias@gmx.de", "braun_elias2@gmx.de"]
     },
     {
       role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Support"
