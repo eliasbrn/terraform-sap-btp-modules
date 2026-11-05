@@ -219,6 +219,7 @@ module "foundation_role_collections" {
 # --------------------------------
 module "workplace_assignments" {
   source = "../workplace_assignments"
+  depends_on = [ module.foundation_role_collections ]
 
   subaccount_id    = btp_subaccount.this.id
   subaccount_stage = var.subaccount_stage
