@@ -358,4 +358,51 @@ resource "btp_subaccount_role_collection" "TRIAL_BRC_AuditViewer_R_View" {
   ]
 }
 
+# --------------------------------
+# User Authorization
+# --------------------------------
+resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_C_UserAuthorizationAdministrator" {
+  subaccount_id = var.subaccount_id
+  name          = "TRIAL_PRC_Subaccount_C_UserAuthorizationAdministrator"
+  description   = "Read-write authorizations for trusted identity providers, role collections, roles and users on subaccount level."
+
+  roles = [
+    {
+      name                 = "Subaccount Viewer"
+      role_template_app_id = "cis-local!b4"
+      role_template_name   = "Subaccount_Viewer"
+    },
+    {
+      name                 = "User and Role Administrator"
+      role_template_app_id = "xsuaa!t8"
+      role_template_name   = "xsuaa_admin"
+    }
+  ]
+}
+
+resource "btp_subaccount_role_collection" "TRIAL_PRC_Subaccount_R_UserAuthorizationViewer" {
+  subaccount_id = var.subaccount_id
+  name          = "TRIAL_PRC_Subaccount_R_UserAuthorizationViewer"
+  description   = "Read authorizations for trusted identity providers, role collections, roles and users on subaccount level."
+
+  roles = [
+    {
+      name                 = "Subaccount Viewer"
+      role_template_app_id = "cis-local!b4"
+      role_template_name   = "Subaccount_Viewer"
+    },
+    {
+      name                 = "User and Role Auditor"
+      role_template_app_id = "xsuaa!t8"
+      role_template_name   = "xsuaa_auditor"
+    }
+  ]
+}
+
+
+
+
+
+
+
 

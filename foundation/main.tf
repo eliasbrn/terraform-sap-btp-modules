@@ -35,7 +35,7 @@ resource "btp_subaccount_environment_instance" "this" {
   })
 }
 
-module "org_role_assignments" {
+module "cf_org_role_assignments" {
   source     = "../cf/org_role_assignments"
 
   cf_org_id  = btp_subaccount_environment_instance.this.platform_id
@@ -59,7 +59,7 @@ resource "cloudfoundry_space" "foundation" {
 }
 
 resource "cloudfoundry_space_role" "provisioner" {
-  depends_on = [ module.org_role_assignments, cloudfoundry_space.foundation ]
+  depends_on = [ module.cf_org_role_assignments, cloudfoundry_space.foundation ]
 
   username = "braun_elias@gmx.de"
   type     = "space_developer"
@@ -68,8 +68,8 @@ resource "cloudfoundry_space_role" "provisioner" {
   
 }
 
-module "space_role_assignments_foundation" {
-  depends_on = [ module.org_role_assignments, cloudfoundry_space.foundation ]
+module "cf_space_role_assignments_foundation" {
+  depends_on = [ module.cf_org_role_assignments, cloudfoundry_space.foundation ]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.foundation.id
@@ -104,7 +104,7 @@ resource "cloudfoundry_space" "project" {
 }
 
 module "space_role_assignments_project" {
-  depends_on = [ module.org_role_assignments, cloudfoundry_space.project]
+  depends_on = [ module.cf_org_role_assignments, cloudfoundry_space.project]
   source  = "../cf/space_role_assignments"
 
   space   = cloudfoundry_space.project.id
@@ -212,6 +212,24 @@ module "btp_role_collection_assignments" {
     }
 
   ]
+}
+
+# --------------------------------
+# Workplace Assignments
+# --------------------------------
+module "workplace_assignments" {
+  source = "../workplace_assignments"
+
+  subaccount_id = btp.subaccount.this.id
+  subaccount_stage = var.subaccount_stage
+  cf_org_id     = btp_subaccount_environment_instance.this.platform_id
+  origin        = var.origin
+
+  workplace_assignments_by_user = {
+    "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+    "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
+  }
 }
 
 # --------------------------------
