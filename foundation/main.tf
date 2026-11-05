@@ -217,20 +217,20 @@ module "foundation_role_collections" {
 # --------------------------------
 # Workplace Assignments
 # --------------------------------
-# module "workplace_assignments" {
-#   source = "../workplace_assignments"
+module "workplace_assignments" {
+  source = "../workplace_assignments"
 
-#   subaccount_id    = btp_subaccount.this.id
-#   subaccount_stage = var.subaccount_stage
-#   cf_org_id        = btp_subaccount_environment_instance.this.platform_id
-#   origin           = var.origin
+  subaccount_id    = btp_subaccount.this.id
+  subaccount_stage = var.subaccount_stage
+  cf_org_id        = btp_subaccount_environment_instance.this.platform_id
+  origin           = var.origin
 
-#   workplace_assignments_by_user = {
-#     "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-#     "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-#     "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
-#   }
-# }
+  workplace_assignments_by_user = {
+    "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+    "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
+  }
+}
 
 # --------------------------------
 # Trust Configuration
