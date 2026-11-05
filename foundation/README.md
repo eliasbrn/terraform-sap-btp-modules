@@ -87,6 +87,7 @@ No requirements.
 | <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
 | <a name="module_foundation_role_collections"></a> [foundation\_role\_collections](#module\_foundation\_role\_collections) | ../btp/foundation_role_collections | n/a |
 | <a name="module_space_role_assignments_project"></a> [space\_role\_assignments\_project](#module\_space\_role\_assignments\_project) | ../cf/space_role_assignments | n/a |
+| <a name="module_workplace_assignments"></a> [workplace\_assignments](#module\_workplace\_assignments) | ../workplace_assignments | n/a |
 
 ## Resources
 
