@@ -2,25 +2,6 @@
 
 No requirements.
 
-## Overview of SAP IdM Workplaces 
-
-### SPInE Foundation Team
-1. BTP_<Account_Name>_SPINE_GA_ADMIN      --> BTP_TRIAL_SPINE_GA_ADMIN
-2. BTP_<Account_Name>_SPINE_GA_SUPPORT    --> BTP_TRIAL_SPINE_GA_SUPPORT 
-3. BTP_CF_SPINE_ADMIN                    
-4. BTP_CF_SPINE_SUPPORT 
-### <Functional Area> CF Subaccount
-1. SPINE_CF_SUBACC_ADMIN
-2. SPINE_CF_SUBACC_ADMIN_LIGHT
-3. SPINE_CF_SUBACC_USERAUTHADMIN_LIGHT
-### <Functional Area> CF Subaccount - Exception Workplaces
-1. SPINE_CF_SUBACC_USERAUTHADMIN_Q
-2. SPINE_CF_SUBACC_USERAUTHADMIN_I
-3. SPINE_CF_SUBACC_USERAUTHADMIN_P
-### <Functional Area> CF Spaces
-1. BTP_CF_SPACE_DEVELOP
-2. BTP_CF_SPACE_SUPPORT
-
 ## Providers
 
 | Name | Version |
