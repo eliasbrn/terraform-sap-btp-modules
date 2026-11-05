@@ -21,11 +21,13 @@ No modules.
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_DEV](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_PRD](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_LightAdmin_QA](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
+| [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_C_UserAuthorizationAdministrator](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_CloudConnector_C_Administrator](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_DEV](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_PRD](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Developer_QA](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Space_Support](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
+| [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_UserAuthorizationViewer](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 | [btp_subaccount_role_collection.TRIAL_PRC_Subaccount_R_Viewer](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_role_collection) | resource |
 
 ## Inputs
