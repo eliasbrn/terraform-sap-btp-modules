@@ -188,7 +188,7 @@ module "cf_org_role_assignments" {
 module "cf_space_role_assignments" {
   source = "../cf/space_role_assignments"
 
-  space  = "87c0f167-1ef8-4033-92ce-5e49770649a3"
+  space  = "52920f67-c726-479b-9cec-10b740d6b0e9"
   origin = var.origin
 
   space_role_assignments_by_user = local.workplace_cf_space_role_assignments
