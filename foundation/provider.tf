@@ -1,13 +1,13 @@
 terraform {
   required_providers {
     btp = {
-      source  = "SAP/btp"
+      source = "SAP/btp"
     }
     cloudfoundry = {
-      source  = "cloudfoundry/cloudfoundry"
+      source = "cloudfoundry/cloudfoundry"
     }
     sci = {
-      source  = "SAP/sap-cloud-identity-services"
+      source = "SAP/sap-cloud-identity-services"
     }
   }
 }

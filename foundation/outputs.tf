@@ -2,9 +2,9 @@
 # Subaccount
 # --------------------------------
 output "subaccount_id" {
-    description = "ID of the Subaccount"
-    value = btp_subaccount.this.id
-    type = string
+  description = "ID of the Subaccount"
+  value       = btp_subaccount.this.id
+  type        = string
 }
 
 output "subaccount_name" {
@@ -22,7 +22,7 @@ output "subaccount_subdomain" {
 # --------------------------------
 output "cf_org_id" {
   description = "ID of the Cloud Foundry Organization"
-  value = btp_subaccount_environment_instance.this.platform_id
+  value       = btp_subaccount_environment_instance.this.platform_id
 }
 
 output "cf_api_url" {
@@ -37,7 +37,7 @@ output "cf_org_name" {
 }
 output "org_members" {
   description = "All Org Members with their Org Roles"
-  value = module.org_role_assignments.users_with_roles
+  value       = module.org_role_assignments.users_with_roles
 }
 
 
@@ -47,29 +47,29 @@ output "org_members" {
 # Foundation-Space
 output "space_foundation_name" {
   description = "Name of the Space"
-  value = cloudfoundry_space.foundation.name
+  value       = cloudfoundry_space.foundation.name
 }
 output "space_foundation_id" {
   description = "ID of the Space"
-  value = cloudfoundry_space.foundation.id
+  value       = cloudfoundry_space.foundation.id
 }
 output "space_foundation_members" {
   description = "All Space Members with their Space Roles"
-  value = module.space_role_assignments_foundation.users_with_roles
+  value       = module.space_role_assignments_foundation.users_with_roles
 }
 
 # Project-Space
 output "space_project_name" {
   description = "Name of the Space"
-  value = cloudfoundry_space.project.name
+  value       = cloudfoundry_space.project.name
 }
 output "space_project_id" {
   description = "ID of the Space"
-  value = cloudfoundry_space.project.id
+  value       = cloudfoundry_space.project.id
 }
 output "space_project_members" {
   description = "All Space Members with their Space Roles"
-  value = module.space_role_assignments_project.users_with_roles
+  value       = module.space_role_assignments_project.users_with_roles
 }
 
 # --------------------------------
@@ -77,7 +77,7 @@ output "space_project_members" {
 # --------------------------------
 output "list_entitlements" {
   description = "List of all Entitlements"
-  value = module.entitlements.entitlement_list
+  value       = module.entitlements.entitlement_list
 }
 
 # --------------------------------
@@ -85,12 +85,12 @@ output "list_entitlements" {
 # --------------------------------
 output "auditlog_viewer_id" {
   description = "ID of the Audit Log Viewer Servie Subscription"
-  value = btp_subaccount_subscription.auditlog_viewer.id
+  value       = btp_subaccount_subscription.auditlog_viewer.id
 }
 
 output "auditlog_management_id" {
   description = "ID of the Auditlog Management Service Instance"
-  value = cloudfoundry_service_instance.auditlog_management.id
+  value       = cloudfoundry_service_instance.auditlog_management.id
 }
 
 # --------------------------------
@@ -98,5 +98,5 @@ output "auditlog_management_id" {
 # --------------------------------
 output "origin" {
   description = "The origin of the identity provider"
-  value = btp_subaccount_trust_configuration.this.origin
+  value       = btp_subaccount_trust_configuration.this.origin
 }

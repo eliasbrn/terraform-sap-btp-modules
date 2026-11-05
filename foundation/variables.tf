@@ -1,13 +1,13 @@
 variable "landscape_name" {
   description = "Name of the Landscape"
-  type = string
+  type        = string
 }
 
 variable "subaccount_stage" {
   description = "Stage of the Subaccount"
-   type = string
-   
-   validation {
+  type        = string
+
+  validation {
     condition = contains(
       ["SBX", "DEV", "QA", "INT", "PRD"],
       var.subaccount_stage
@@ -18,7 +18,7 @@ variable "subaccount_stage" {
 
 variable "subaccount_region" {
   description = "Region of the Subaccount"
-  type = string
+  type        = string
 
   validation {
     condition = contains(
@@ -31,12 +31,12 @@ variable "subaccount_region" {
 
 variable "subaccount_parent" {
   description = "Directory in which the subaccount is created "
-  default = null
-  type = string
+  default     = null
+  type        = string
 }
 
 variable "origin" {
   description = "Origin of the identity provider"
-  default = "axafcftur"
-  type = string
+  default     = "axafcftur"
+  type        = string
 }

@@ -1,5 +1,5 @@
- # Convert the user-to-roles map into a flat list of role assignments
- locals {
+# Convert the user-to-roles map into a flat list of role assignments
+locals {
   role_assignments = flatten([
     for email, roles in var.space_role_assignments_by_user : [
       for role in roles : {
@@ -18,8 +18,8 @@ resource "cloudfoundry_space_role" "this" {
     "${assignment.email}-${assignment.role}" => assignment
   }
 
-  username  = each.value.email
-  type      = each.value.role
-  origin    = var.origin
-  space     = var.space
+  username = each.value.email
+  type     = each.value.role
+  origin   = var.origin
+  space    = var.space
 }

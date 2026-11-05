@@ -1,34 +1,34 @@
 variable "workplace_assignments_by_user" {
   description = "List of Users with their e-mail and SAP IdM workplace"
-  type = map(list(string))
+  type        = map(list(string))
 }
 
 variable "cf_org_id" {
   description = "ID of the Cloud Foundry Organization"
-  type = string
+  type        = string
 }
 
 variable "origin" {
   description = "Origin used for all created users"
-  type = string
+  type        = string
 }
 
 variable "directory_id" {
-    description = "ID of the Directory"
-    type = string
-    default = null
+  description = "ID of the Directory"
+  type        = string
+  default     = null
 }
 
 variable "subaccount_id" {
-    description = "ID of the Subaccount"
-    type = string
+  description = "ID of the Subaccount"
+  type        = string
 }
 
 variable "subaccount_stage" {
   description = "Stage of the Subaccount"
-   type = string
-   
-   validation {
+  type        = string
+
+  validation {
     condition = contains(
       ["SBX", "DEV", "QA", "INT", "PRD"],
       var.subaccount_stage

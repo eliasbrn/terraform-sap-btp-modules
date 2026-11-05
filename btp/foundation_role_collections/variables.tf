@@ -1,13 +1,13 @@
 variable "subaccount_id" {
-    description = "ID of the Subaccount"
-    type = string
+  description = "ID of the Subaccount"
+  type        = string
 }
 
 variable "subaccount_stage" {
   description = "Stage of the Subaccount"
-   type = string
-   
-   validation {
+  type        = string
+
+  validation {
     condition = contains(
       ["SBX", "DEV", "QA", "INT", "PRD"],
       var.subaccount_stage
