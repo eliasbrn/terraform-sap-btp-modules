@@ -37,7 +37,7 @@ output "cf_org_name" {
 }
 output "org_members" {
   description = "All Org Members with their Org Roles"
-  value       = module.org_role_assignments.users_with_roles
+  value       = module.cf_org_role_assignments.users_with_roles
 }
 
 
@@ -55,7 +55,7 @@ output "space_foundation_id" {
 }
 output "space_foundation_members" {
   description = "All Space Members with their Space Roles"
-  value       = module.space_role_assignments_foundation.users_with_roles
+  value       = module.cf_space_role_assignments_foundation.users_with_roles
 }
 
 # Project-Space

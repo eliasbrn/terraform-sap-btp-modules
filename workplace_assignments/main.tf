@@ -175,7 +175,7 @@ module "btp_role_collection_assignments" {
 module "cf_org_role_assignments" {
   source = "../cf/org_role_assignments"
 
-  cf_org_id = btp_subaccount_environment_instance.this.platform_id
+  cf_org_id = var.cf_org_id
   origin    = var.origin
 
   org_role_assignments_by_user = local.workplace_cf_org_role_assignments

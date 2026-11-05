@@ -35,18 +35,18 @@ resource "btp_subaccount_environment_instance" "this" {
   })
 }
 
-module "cf_org_role_assignments" {
-  source = "../cf/org_role_assignments"
+# module "cf_org_role_assignments" {
+#   source = "../cf/org_role_assignments"
 
-  cf_org_id = btp_subaccount_environment_instance.this.platform_id
-  origin    = local.user_origin
+#   cf_org_id = btp_subaccount_environment_instance.this.platform_id
+#   origin    = local.user_origin
 
-  org_role_assignments_by_user = {
-    "braun_elias@gmx.de"      = ["organization_manager", "organization_user"],
-    "braun.elias17@gmail.com" = ["organization_user"],
-    "elias.braun@audi.de"     = ["organization_user"]
-  }
-}
+#   org_role_assignments_by_user = {
+#     "braun_elias@gmx.de"      = ["organization_manager", "organization_user"],
+#     "braun.elias17@gmail.com" = ["organization_user"],
+#     "elias.braun@audi.de"     = ["organization_user"]
+#   }
+# }
 
 # --------------------------------
 # Cloud Foundry Spaces & Qutoas
@@ -68,19 +68,19 @@ resource "cloudfoundry_space_role" "provisioner" {
 
 }
 
-module "cf_space_role_assignments_foundation" {
-  depends_on = [module.cf_org_role_assignments, cloudfoundry_space.foundation]
-  source     = "../cf/space_role_assignments"
+# module "cf_space_role_assignments_foundation" {
+#   depends_on = [module.cf_org_role_assignments, cloudfoundry_space.foundation]
+#   source     = "../cf/space_role_assignments"
 
-  space  = cloudfoundry_space.foundation.id
-  origin = local.user_origin
+#   space  = cloudfoundry_space.foundation.id
+#   origin = local.user_origin
 
-  space_role_assignments_by_user = {
-    "braun_elias@gmx.de"      = ["space_manager", "space_developer"],
-    "braun.elias17@gmail.com" = ["space_supporter"],
-    "elias.braun@audi.de"     = ["space_auditor"]
-  }
-}
+#   space_role_assignments_by_user = {
+#     "braun_elias@gmx.de"      = ["space_manager", "space_developer"],
+#     "braun.elias17@gmail.com" = ["space_supporter"],
+#     "elias.braun@audi.de"     = ["space_auditor"]
+#   }
+# }
 
 resource "cloudfoundry_space_quota" "foundation_space_quota" {
   depends_on = [cloudfoundry_space.foundation]
@@ -185,52 +185,52 @@ module "foundation_role_collections" {
 # --------------------------------
 # Role Collection Assignments
 # --------------------------------
-module "btp_role_collection_assignments" {
-  source     = "SAP/sap-btp-role-collection-assignments/btp"
-  version    = "1.0.1"
-  depends_on = [module.foundation_role_collections]
+# module "btp_role_collection_assignments" {
+#   source     = "SAP/sap-btp-role-collection-assignments/btp"
+#   version    = "1.0.1"
+#   depends_on = [module.foundation_role_collections]
 
-  subaccount_id     = btp_subaccount.this.id
-  default_origin_id = local.user_origin
+#   subaccount_id     = btp_subaccount.this.id
+#   default_origin_id = local.user_origin
 
-  role_collection_assignments_by_user = [
-    {
-      role_collection_name = "TRIAL_PRC_Subaccount_C_Administrator"
-      user_names           = ["braun_elias@gmx.de", "braun_elias2@gmx.de"]
-    },
-    {
-      role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Support"
-      user_names           = ["braun_elias@gmx.de", "elias.braun@audi.de"]
-    },
-    {
-      role_collection_name = "TRIAL_PRC_Subaccount_R_Viewer"
-      user_names           = ["elias.braun@audi.de", "braun.elias17@gmail.com"]
-    },
-    {
-      role_collection_name = "TRIAL_PRC_Subaccount_CloudConnector_C_Administrator"
-      user_names           = ["cloudconnector@admin.de"]
-    }
+#   role_collection_assignments_by_user = [
+#     {
+#       role_collection_name = "TRIAL_PRC_Subaccount_C_Administrator"
+#       user_names           = ["braun_elias@gmx.de", "braun_elias2@gmx.de"]
+#     },
+#     {
+#       role_collection_name = "TRIAL_PRC_Subaccount_R_Space_Support"
+#       user_names           = ["braun_elias@gmx.de", "elias.braun@audi.de"]
+#     },
+#     {
+#       role_collection_name = "TRIAL_PRC_Subaccount_R_Viewer"
+#       user_names           = ["elias.braun@audi.de", "braun.elias17@gmail.com"]
+#     },
+#     {
+#       role_collection_name = "TRIAL_PRC_Subaccount_CloudConnector_C_Administrator"
+#       user_names           = ["cloudconnector@admin.de"]
+#     }
 
-  ]
-}
+#   ]
+# }
 
 # --------------------------------
 # Workplace Assignments
 # --------------------------------
-module "workplace_assignments" {
-  source = "../workplace_assignments"
+# module "workplace_assignments" {
+#   source = "../workplace_assignments"
 
-  subaccount_id    = btp.subaccount.this.id
-  subaccount_stage = var.subaccount_stage
-  cf_org_id        = btp_subaccount_environment_instance.this.platform_id
-  origin           = var.origin
+#   subaccount_id    = btp_subaccount.this.id
+#   subaccount_stage = var.subaccount_stage
+#   cf_org_id        = btp_subaccount_environment_instance.this.platform_id
+#   origin           = var.origin
 
-  workplace_assignments_by_user = {
-    "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-    "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
-  }
-}
+#   workplace_assignments_by_user = {
+#     "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+#     "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+#     "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
+#   }
+# }
 
 # --------------------------------
 # Trust Configuration
