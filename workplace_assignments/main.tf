@@ -45,8 +45,6 @@ locals {
         workplace   = workplace
         permissions = local.workplaces[workplace][lower(var.subaccount_stage)]
       }
-      if contains(keys(local.workplaces), workplace)
-      && contains(keys(local.workplaces[workplace]), var.subaccount_stage)
     ]
   ])
 
