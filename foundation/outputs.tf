@@ -35,10 +35,10 @@ output "cf_org_name" {
   description = "Name of the Cloud Foundry Org"
   value       = btp_subaccount_environment_instance.this.name
 }
-output "org_members" {
-  description = "All Org Members with their Org Roles"
-  value       = module.cf_org_role_assignments.users_with_roles
-}
+# output "org_members" {
+#   description = "All Org Members with their Org Roles"
+#   value       = module.cf_org_role_assignments.users_with_roles
+# }
 
 
 # --------------------------------
@@ -53,10 +53,10 @@ output "space_foundation_id" {
   description = "ID of the Space"
   value       = cloudfoundry_space.foundation.id
 }
-output "space_foundation_members" {
-  description = "All Space Members with their Space Roles"
-  value       = module.cf_space_role_assignments_foundation.users_with_roles
-}
+# output "space_foundation_members" {
+#   description = "All Space Members with their Space Roles"
+#   value       = module.cf_space_role_assignments_foundation.users_with_roles
+# }
 
 # Project-Space
 output "space_project_name" {
