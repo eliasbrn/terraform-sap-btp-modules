@@ -37,7 +37,10 @@ jobs:
             -not -path "*/.terraform/*" \
             -exec dirname {} \; | sort -u | while read -r dir; do
               echo "Creating module-docs for: $dir"
-              terraform-docs markdown table "$dir" > "$dir/README.md"
+              terraform-docs markdown table \
+                --output-file README.md \
+                --output-mode inject \
+                "$dir"
           done
 
       - name: Commit and push
