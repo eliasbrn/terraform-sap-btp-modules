@@ -67,3 +67,75 @@ No requirements.
 | <a name="output_subaccount_id"></a> [subaccount\_id](#output\_subaccount\_id) | ID of the Subaccount |
 | <a name="output_subaccount_name"></a> [subaccount\_name](#output\_subaccount\_name) | Name of the subaccount |
 | <a name="output_subaccount_subdomain"></a> [subaccount\_subdomain](#output\_subaccount\_subdomain) | Subdomain of the subaccount |
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+| ---- | ------- |
+| <a name="provider_btp"></a> [btp](#provider\_btp) | n/a |
+| <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | n/a |
+
+## Modules
+
+| Name | Source | Version |
+| ---- | ------ | ------- |
+| <a name="module_btp_role_collection_assignments"></a> [btp\_role\_collection\_assignments](#module\_btp\_role\_collection\_assignments) | SAP/sap-btp-role-collection-assignments/btp | 1.0.1 |
+| <a name="module_cf_org_role_assignments"></a> [cf\_org\_role\_assignments](#module\_cf\_org\_role\_assignments) | ../cf/org_role_assignments | n/a |
+| <a name="module_cf_space_role_assignments_foundation"></a> [cf\_space\_role\_assignments\_foundation](#module\_cf\_space\_role\_assignments\_foundation) | ../cf/space_role_assignments | n/a |
+| <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
+| <a name="module_foundation_role_collections"></a> [foundation\_role\_collections](#module\_foundation\_role\_collections) | ../btp/foundation_role_collections | n/a |
+| <a name="module_space_role_assignments_project"></a> [space\_role\_assignments\_project](#module\_space\_role\_assignments\_project) | ../cf/space_role_assignments | n/a |
+| <a name="module_workplace_assignments"></a> [workplace\_assignments](#module\_workplace\_assignments) | ../workplace_assignments | n/a |
+
+## Resources
+
+| Name | Type |
+| ---- | ---- |
+| [btp_subaccount.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount) | resource |
+| [btp_subaccount_environment_instance.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_environment_instance) | resource |
+| [btp_subaccount_subscription.auditlog_viewer](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_subscription) | resource |
+| [btp_subaccount_trust_configuration.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_trust_configuration) | resource |
+| [cloudfoundry_service_instance.auditlog_management](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/service_instance) | resource |
+| [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
+| [cloudfoundry_space.project](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
+| [cloudfoundry_space_quota.foundation_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
+| [cloudfoundry_space_quota.project_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
+| [cloudfoundry_space_role.provisioner](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_role) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+| ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_landscape_name"></a> [landscape\_name](#input\_landscape\_name) | Name of the Landscape | `string` | n/a | yes |
+| <a name="input_origin"></a> [origin](#input\_origin) | Origin of the identity provider | `string` | `"axafcftur"` | no |
+| <a name="input_subaccount_parent"></a> [subaccount\_parent](#input\_subaccount\_parent) | Directory in which the subaccount is created | `string` | `null` | no |
+| <a name="input_subaccount_region"></a> [subaccount\_region](#input\_subaccount\_region) | Region of the Subaccount | `string` | n/a | yes |
+| <a name="input_subaccount_stage"></a> [subaccount\_stage](#input\_subaccount\_stage) | Stage of the Subaccount | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+| ---- | ----------- |
+| <a name="output_auditlog_management_id"></a> [auditlog\_management\_id](#output\_auditlog\_management\_id) | ID of the Auditlog Management Service Instance |
+| <a name="output_auditlog_viewer_id"></a> [auditlog\_viewer\_id](#output\_auditlog\_viewer\_id) | ID of the Audit Log Viewer Servie Subscription |
+| <a name="output_cf_api_url"></a> [cf\_api\_url](#output\_cf\_api\_url) | API URL of the Cloud Foundry Organization |
+| <a name="output_cf_org_id"></a> [cf\_org\_id](#output\_cf\_org\_id) | ID of the Cloud Foundry Organization |
+| <a name="output_cf_org_name"></a> [cf\_org\_name](#output\_cf\_org\_name) | Name of the Cloud Foundry Org |
+| <a name="output_list_entitlements"></a> [list\_entitlements](#output\_list\_entitlements) | List of all Entitlements |
+| <a name="output_org_members"></a> [org\_members](#output\_org\_members) | All Org Members with their Org Roles |
+| <a name="output_origin"></a> [origin](#output\_origin) | The origin of the identity provider |
+| <a name="output_space_foundation_id"></a> [space\_foundation\_id](#output\_space\_foundation\_id) | ID of the Space |
+| <a name="output_space_foundation_members"></a> [space\_foundation\_members](#output\_space\_foundation\_members) | All Space Members with their Space Roles |
+| <a name="output_space_foundation_name"></a> [space\_foundation\_name](#output\_space\_foundation\_name) | Name of the Space |
+| <a name="output_space_project_id"></a> [space\_project\_id](#output\_space\_project\_id) | ID of the Space |
+| <a name="output_space_project_members"></a> [space\_project\_members](#output\_space\_project\_members) | All Space Members with their Space Roles |
+| <a name="output_space_project_name"></a> [space\_project\_name](#output\_space\_project\_name) | Name of the Space |
+| <a name="output_subaccount_id"></a> [subaccount\_id](#output\_subaccount\_id) | ID of the Subaccount |
+| <a name="output_subaccount_name"></a> [subaccount\_name](#output\_subaccount\_name) | Name of the subaccount |
+| <a name="output_subaccount_subdomain"></a> [subaccount\_subdomain](#output\_subaccount\_subdomain) | Subdomain of the subaccount |
+<!-- END_TF_DOCS -->
