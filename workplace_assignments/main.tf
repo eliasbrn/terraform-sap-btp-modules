@@ -43,7 +43,7 @@ locals {
       for workplace in workplaces : {
         email       = email
         workplace   = workplace
-        permissions = local.workplaces[workplace][var.subaccount_stage]
+        permissions = local.workplaces[workplace][lower(var.subaccount_stage)]
       }
       if contains(keys(local.workplaces), workplace)
       && contains(keys(local.workplaces[workplace]), var.subaccount_stage)
