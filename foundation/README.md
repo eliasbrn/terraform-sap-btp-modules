@@ -77,8 +77,8 @@ No requirements.
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_btp"></a> [btp](#provider\_btp) | n/a |
-| <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | n/a |
+| <a name="provider_btp"></a> [btp](#provider\_btp) | 1.27.0 |
+| <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | 1.18.0 |
 
 ## Modules
 
