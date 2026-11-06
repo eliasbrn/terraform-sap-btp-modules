@@ -75,10 +75,10 @@ output "list_entitlements" {
 # --------------------------------
 # Subscriptions & Services
 # --------------------------------
-output "auditlog_viewer_id" {
-  description = "ID of the Audit Log Viewer Servie Subscription"
-  value       = btp_subaccount_subscription.auditlog_viewer.id
-}
+# output "auditlog_viewer_id" {
+#   description = "ID of the Audit Log Viewer Servie Subscription"
+#   value       = btp_subaccount_subscription.auditlog_viewer.id
+# }
 
 output "auditlog_management_id" {
   description = "ID of the Auditlog Management Service Instance"
