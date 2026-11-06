@@ -129,11 +129,10 @@ module "entitlements" {
   subaccount = btp_subaccount.this.id
 
   entitlements = {
-    "application-logs" = ["standard"],
+    "autoscaler" = ["standard"],
     "application-logs" = ["lite"],
     "connectivity"     = ["lite"],
-    "destination"      = ["lite"],
-    "auditlog-viewer"  = ["free"]
+    "destination"      = ["lite"]
   }
 }
 
