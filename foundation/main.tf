@@ -103,17 +103,6 @@ resource "cloudfoundry_space" "project" {
   labels = { purpose : "${var.subaccount_stage}" }
 }
 
-module "space_role_assignments_project" {
-  depends_on = [cloudfoundry_space.project]
-  source     = "../cf/space_role_assignments"
-
-  space  = cloudfoundry_space.project.id
-  origin = local.user_origin
-
-  space_role_assignments_by_user = {
-    "braun_elias@gmx.de" = ["space_manager"]
-  }
-}
 
 resource "cloudfoundry_space_quota" "project_space_quota" {
   depends_on = [cloudfoundry_space.project]
@@ -214,24 +203,6 @@ module "foundation_role_collections" {
 #   ]
 # }
 
-# --------------------------------
-# Workplace Assignments
-# --------------------------------
-module "workplace_assignments" {
-  source = "../workplace_assignments"
-  depends_on = [ module.foundation_role_collections ]
-
-  subaccount_id    = btp_subaccount.this.id
-  subaccount_stage = var.subaccount_stage
-  cf_org_id        = btp_subaccount_environment_instance.this.platform_id
-  origin           = local.user_origin
-
-  workplace_assignments_by_user = {
-    "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT", "BTP_CF_SPINE_SUPPORT"],
-    "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
-  }
-}
 
 # --------------------------------
 # Trust Configuration

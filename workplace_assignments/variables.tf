@@ -8,7 +8,12 @@ variable "cf_org_id" {
   type        = string
 }
 
-variable "origin" {
+variable "cf_spaces" {
+  description = "List of all Cloud Foundry Space IDs in the subaccount"
+  type        = list(string)
+}
+
+variable "user_origin" {
   description = "Origin used for all created users"
   type        = string
 }

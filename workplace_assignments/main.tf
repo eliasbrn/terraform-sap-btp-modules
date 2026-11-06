@@ -161,7 +161,7 @@ module "btp_role_collection_assignments" {
   version = "1.0.1"
 
   subaccount_id     = var.subaccount_id
-  default_origin_id = var.origin
+  default_origin_id = var.user_origin
 
   role_collection_assignments_by_user = values(
     local.workplace_role_collection_assignments
@@ -176,7 +176,7 @@ module "cf_org_role_assignments" {
   source = "../cf/org_role_assignments"
 
   cf_org_id = var.cf_org_id
-  origin    = var.origin
+  origin    = var.user_origin
 
   org_role_assignments_by_user = local.workplace_cf_org_role_assignments
 }
@@ -185,11 +185,13 @@ module "cf_org_role_assignments" {
 # --------------------------------
 # Cloud Foundry Space Roles 
 # --------------------------------
-# module "cf_space_role_assignments" {
-#   source = "../cf/space_role_assignments"
+module "cf_space_role_assignments" {
+  for_each = toset(var.cf_spaces)
 
-#   space  = "52920f67-c726-479b-9cec-10b740d6b0e9"
-#   origin = var.origin
+  source = "../cf/space_role_assignments"
 
-#   space_role_assignments_by_user = local.workplace_cf_space_role_assignments
-# }
+  space  = each.value
+  origin = var.user_origin
+
+  space_role_assignments_by_user = local.workplace_cf_space_role_assignments
+}

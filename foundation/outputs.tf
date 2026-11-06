@@ -44,32 +44,11 @@ output "cf_org_name" {
 # --------------------------------
 # Cloud Foundry Spaces
 # --------------------------------
-# Foundation-Space
-output "space_foundation_name" {
-  description = "Name of the Space"
-  value       = cloudfoundry_space.foundation.name
-}
-output "space_foundation_id" {
-  description = "ID of the Space"
-  value       = cloudfoundry_space.foundation.id
-}
-# output "space_foundation_members" {
-#   description = "All Space Members with their Space Roles"
-#   value       = module.cf_space_role_assignments_foundation.users_with_roles
-# }
-
-# Project-Space
-output "space_project_name" {
-  description = "Name of the Space"
-  value       = cloudfoundry_space.project.name
-}
-output "space_project_id" {
-  description = "ID of the Space"
-  value       = cloudfoundry_space.project.id
-}
-output "space_project_members" {
-  description = "All Space Members with their Space Roles"
-  value       = module.space_role_assignments_project.users_with_roles
+output "cf_spaces" {
+  value = {
+    foundation = cloudfoundry_space.foundation.id
+    project    = cloudfoundry_space.project.id
+  }
 }
 
 # --------------------------------
@@ -99,4 +78,9 @@ output "auditlog_management_id" {
 output "origin" {
   description = "The origin of the identity provider"
   value       = btp_subaccount_trust_configuration.this.origin
+}
+
+output "user_origin" {
+  description = "The origin for user provisioning"
+  value       = local.user_origin
 }
