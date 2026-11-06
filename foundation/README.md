@@ -86,8 +86,6 @@ No requirements.
 | ---- | ------ | ------- |
 | <a name="module_entitlements"></a> [entitlements](#module\_entitlements) | aydin-ozcan/sap-btp-entitlements/btp | 1.0.1 |
 | <a name="module_foundation_role_collections"></a> [foundation\_role\_collections](#module\_foundation\_role\_collections) | ../btp/foundation_role_collections | n/a |
-| <a name="module_space_role_assignments_project"></a> [space\_role\_assignments\_project](#module\_space\_role\_assignments\_project) | ../cf/space_role_assignments | n/a |
-| <a name="module_workplace_assignments"></a> [workplace\_assignments](#module\_workplace\_assignments) | ../workplace_assignments | n/a |
 
 ## Resources
 
@@ -123,14 +121,11 @@ No requirements.
 | <a name="output_cf_api_url"></a> [cf\_api\_url](#output\_cf\_api\_url) | API URL of the Cloud Foundry Organization |
 | <a name="output_cf_org_id"></a> [cf\_org\_id](#output\_cf\_org\_id) | ID of the Cloud Foundry Organization |
 | <a name="output_cf_org_name"></a> [cf\_org\_name](#output\_cf\_org\_name) | Name of the Cloud Foundry Org |
+| <a name="output_cf_spaces"></a> [cf\_spaces](#output\_cf\_spaces) | -------------------------------- Cloud Foundry Spaces -------------------------------- |
 | <a name="output_list_entitlements"></a> [list\_entitlements](#output\_list\_entitlements) | List of all Entitlements |
 | <a name="output_origin"></a> [origin](#output\_origin) | The origin of the identity provider |
-| <a name="output_space_foundation_id"></a> [space\_foundation\_id](#output\_space\_foundation\_id) | ID of the Space |
-| <a name="output_space_foundation_name"></a> [space\_foundation\_name](#output\_space\_foundation\_name) | Name of the Space |
-| <a name="output_space_project_id"></a> [space\_project\_id](#output\_space\_project\_id) | ID of the Space |
-| <a name="output_space_project_members"></a> [space\_project\_members](#output\_space\_project\_members) | All Space Members with their Space Roles |
-| <a name="output_space_project_name"></a> [space\_project\_name](#output\_space\_project\_name) | Name of the Space |
 | <a name="output_subaccount_id"></a> [subaccount\_id](#output\_subaccount\_id) | ID of the Subaccount |
 | <a name="output_subaccount_name"></a> [subaccount\_name](#output\_subaccount\_name) | Name of the subaccount |
 | <a name="output_subaccount_subdomain"></a> [subaccount\_subdomain](#output\_subaccount\_subdomain) | Subdomain of the subaccount |
+| <a name="output_user_origin"></a> [user\_origin](#output\_user\_origin) | The origin for user provisioning |
 <!-- END_TF_DOCS -->
