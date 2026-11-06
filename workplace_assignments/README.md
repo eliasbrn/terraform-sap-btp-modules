@@ -78,7 +78,6 @@ No requirements.
 | ---- | ------ | ------- |
 | <a name="module_btp_role_collection_assignments"></a> [btp\_role\_collection\_assignments](#module\_btp\_role\_collection\_assignments) | SAP/sap-btp-role-collection-assignments/btp | 1.0.1 |
 | <a name="module_cf_org_role_assignments"></a> [cf\_org\_role\_assignments](#module\_cf\_org\_role\_assignments) | ../cf/org_role_assignments | n/a |
-| <a name="module_cf_space_role_assignments"></a> [cf\_space\_role\_assignments](#module\_cf\_space\_role\_assignments) | ../cf/space_role_assignments | n/a |
 
 ## Resources
 
@@ -102,5 +101,8 @@ No requirements.
 
 | Name | Description |
 | ---- | ----------- |
+| <a name="output_role_collection_assignments"></a> [role\_collection\_assignments](#output\_role\_collection\_assignments) | n/a |
+| <a name="output_subaccount_stage"></a> [subaccount\_stage](#output\_subaccount\_stage) | n/a |
+| <a name="output_user_workplaces"></a> [user\_workplaces](#output\_user\_workplaces) | n/a |
 | <a name="output_users_with_workplaces"></a> [users\_with\_workplaces](#output\_users\_with\_workplaces) | List of all users with assigned SAP IdM Workplaces |
 <!-- END_TF_DOCS -->
