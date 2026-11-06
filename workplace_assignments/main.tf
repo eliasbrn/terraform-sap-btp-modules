@@ -155,8 +155,6 @@ resource "btp_directory_role_collection_assignment" "dir_admin" {
 # Platform Role Collections (Subaccount)
 # --------------------------------
 module "btp_role_collection_assignments" {
-  count = length(local.workplace_role_collection_assignments) > 0 ? 1 : 0
-
   source  = "SAP/sap-btp-role-collection-assignments/btp"
   version = "1.0.1"
 
@@ -187,6 +185,7 @@ module "cf_org_role_assignments" {
 # --------------------------------
 module "cf_space_role_assignments" {
   for_each = var.cf_spaces
+  depends_on = [ module.cf_org_role_assignments ]
 
   source = "../cf/space_role_assignments"
 
