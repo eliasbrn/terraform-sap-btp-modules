@@ -6,8 +6,8 @@ terraform {
     cloudfoundry = {
       source = "cloudfoundry/cloudfoundry"
     }
-    sci = {
-      source = "SAP/sap-cloud-identity-services"
-    }
+    # sci = {
+    #   source = "SAP/sap-cloud-identity-services"
+    # }
   }
 }
