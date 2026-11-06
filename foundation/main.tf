@@ -132,7 +132,8 @@ module "entitlements" {
     "autoscaler" = ["standard"],
     "application-logs" = ["lite"],
     "connectivity"     = ["lite"],
-    "destination"      = ["lite"]
+    "destination"      = ["lite"],
+    "auditlog-viewer"  = ["free"]
   }
 }
 
