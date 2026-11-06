@@ -116,7 +116,6 @@ No requirements.
 | Name | Description |
 | ---- | ----------- |
 | <a name="output_auditlog_management_id"></a> [auditlog\_management\_id](#output\_auditlog\_management\_id) | ID of the Auditlog Management Service Instance |
-| <a name="output_auditlog_viewer_id"></a> [auditlog\_viewer\_id](#output\_auditlog\_viewer\_id) | ID of the Audit Log Viewer Servie Subscription |
 | <a name="output_cf_api_url"></a> [cf\_api\_url](#output\_cf\_api\_url) | API URL of the Cloud Foundry Organization |
 | <a name="output_cf_org_id"></a> [cf\_org\_id](#output\_cf\_org\_id) | ID of the Cloud Foundry Organization |
 | <a name="output_cf_org_name"></a> [cf\_org\_name](#output\_cf\_org\_name) | Name of the Cloud Foundry Org |
