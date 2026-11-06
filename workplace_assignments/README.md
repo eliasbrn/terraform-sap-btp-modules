@@ -92,7 +92,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_cf_org_id"></a> [cf\_org\_id](#input\_cf\_org\_id) | ID of the Cloud Foundry Organization | `string` | n/a | yes |
-| <a name="input_cf_spaces"></a> [cf\_spaces](#input\_cf\_spaces) | List of all Cloud Foundry Space IDs in the subaccount | `list(string)` | n/a | yes |
+| <a name="input_cf_spaces"></a> [cf\_spaces](#input\_cf\_spaces) | Lists all Cloud Foundry Space in the subaccount | `map(string)` | n/a | yes |
 | <a name="input_directory_id"></a> [directory\_id](#input\_directory\_id) | ID of the Directory | `string` | `null` | no |
 | <a name="input_subaccount_id"></a> [subaccount\_id](#input\_subaccount\_id) | ID of the Subaccount | `string` | n/a | yes |
 | <a name="input_subaccount_stage"></a> [subaccount\_stage](#input\_subaccount\_stage) | Stage of the Subaccount | `string` | n/a | yes |
