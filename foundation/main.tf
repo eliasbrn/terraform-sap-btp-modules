@@ -228,7 +228,7 @@ module "workplace_assignments" {
 
   workplace_assignments_by_user = {
     "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
-    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
+    "braun.elias17@gmail.com" = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT", "BTP_CF_SPINE_SUPPORT"],
     "elias.braun@audi.com"    = ["BTP_CF_SPACE_DEVELOP"]
   }
 }
