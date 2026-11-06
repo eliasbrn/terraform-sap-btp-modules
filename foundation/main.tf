@@ -224,7 +224,7 @@ module "workplace_assignments" {
   subaccount_id    = btp_subaccount.this.id
   subaccount_stage = var.subaccount_stage
   cf_org_id        = btp_subaccount_environment_instance.this.platform_id
-  origin           = var.origin
+  origin           = local.user_origin
 
   workplace_assignments_by_user = {
     "braun_elias@gmx.de"      = ["SPINE_CF_SUBACC_ADMIN", "BTP_CF_SPACE_SUPPORT"],
