@@ -44,11 +44,24 @@ output "cf_org_name" {
 # --------------------------------
 # Cloud Foundry Spaces
 # --------------------------------
-output "cf_spaces" {
-  value = {
-    foundation = cloudfoundry_space.foundation.id
-    project    = cloudfoundry_space.project.id
-  }
+# Foundation-Space
+output "space_foundation_name" {
+  description = "Name of the Space"
+  value       = cloudfoundry_space.foundation.name
+}
+output "space_foundation_id" {
+  description = "ID of the Space"
+  value       = cloudfoundry_space.foundation.id
+}
+
+# Project-Space
+output "space_project_name" {
+  description = "Name of the Space"
+  value       = cloudfoundry_space.project.name
+}
+output "space_project_id" {
+  description = "ID of the Space"
+  value       = cloudfoundry_space.project.id
 }
 
 # --------------------------------
