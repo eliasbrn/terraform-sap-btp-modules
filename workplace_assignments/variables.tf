@@ -9,8 +9,8 @@ variable "cf_org_id" {
 }
 
 variable "cf_spaces" {
-  description = "List of all Cloud Foundry Space IDs in the subaccount"
-  type        = list(string)
+  description = "Lists all Cloud Foundry Space in the subaccount"
+  type        = map(string)
 }
 
 variable "user_origin" {

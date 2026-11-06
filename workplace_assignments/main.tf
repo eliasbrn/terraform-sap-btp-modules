@@ -186,7 +186,7 @@ module "cf_org_role_assignments" {
 # Cloud Foundry Space Roles 
 # --------------------------------
 module "cf_space_role_assignments" {
-  for_each = toset(var.cf_spaces)
+  for_each = var.cf_spaces
 
   source = "../cf/space_role_assignments"
 
