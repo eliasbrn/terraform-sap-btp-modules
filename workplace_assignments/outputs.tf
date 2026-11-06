@@ -4,12 +4,10 @@ output "users_with_workplaces" {
 }
 
 output "user_workplaces" {
+  description = "List of all users with their permissions (Role Collections, CF Orgs, CF Spaces)"
   value = local.user_workplaces
 }
 
-output "role_collection_assignments" {
-  value = local.workplace_role_collection_assignments
-}
 
 output "subaccount_stage" {
   value = var.subaccount_stage
