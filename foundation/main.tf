@@ -132,21 +132,20 @@ module "entitlements" {
     "autoscaler" = ["standard"],
     "application-logs" = ["lite"],
     "connectivity"     = ["lite"],
-    "destination"      = ["lite"],
-    "auditlog-viewer"  = ["free"]
+    "destination"      = ["lite"]
   }
 }
 
 # --------------------------------
 # Subscriptions
 # --------------------------------
-resource "btp_subaccount_subscription" "auditlog_viewer" {
-  depends_on = [module.entitlements]
+# resource "btp_subaccount_subscription" "auditlog_viewer" {
+#   depends_on = [module.entitlements]
 
-  subaccount_id = btp_subaccount.this.id
-  app_name      = "auditlog-viewer"
-  plan_name     = "free"
-}
+#   subaccount_id = btp_subaccount.this.id
+#   app_name      = "auditlog-viewer"
+#   plan_name     = "free"
+# }
 
 # --------------------------------
 # Service Instances
