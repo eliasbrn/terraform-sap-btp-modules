@@ -103,8 +103,7 @@ No requirements.
 
 | Name | Description |
 | ---- | ----------- |
-| <a name="output_role_collection_assignments"></a> [role\_collection\_assignments](#output\_role\_collection\_assignments) | n/a |
 | <a name="output_subaccount_stage"></a> [subaccount\_stage](#output\_subaccount\_stage) | n/a |
-| <a name="output_user_workplaces"></a> [user\_workplaces](#output\_user\_workplaces) | n/a |
+| <a name="output_user_workplaces"></a> [user\_workplaces](#output\_user\_workplaces) | List of all users with their permissions (Role Collections, CF Orgs, CF Spaces) |
 | <a name="output_users_with_workplaces"></a> [users\_with\_workplaces](#output\_users\_with\_workplaces) | List of all users with assigned SAP IdM Workplaces |
 <!-- END_TF_DOCS -->
