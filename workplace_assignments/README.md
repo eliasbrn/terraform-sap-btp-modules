@@ -64,13 +64,16 @@ No outputs.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.0 |
+| <a name="requirement_btp"></a> [btp](#requirement\_btp) | ~> 1.27.0 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_btp"></a> [btp](#provider\_btp) | n/a |
+| <a name="provider_btp"></a> [btp](#provider\_btp) | ~> 1.27.0 |
 
 ## Modules
 

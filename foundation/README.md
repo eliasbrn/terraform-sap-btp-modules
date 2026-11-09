@@ -71,7 +71,11 @@ No requirements.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.0 |
+| <a name="requirement_btp"></a> [btp](#requirement\_btp) | ~> 1.27.0 |
+| <a name="requirement_cloudfoundry"></a> [cloudfoundry](#requirement\_cloudfoundry) | 1.17.0 |
 
 ## Providers
 
@@ -94,12 +98,12 @@ No requirements.
 | [btp_subaccount.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount) | resource |
 | [btp_subaccount_environment_instance.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_environment_instance) | resource |
 | [btp_subaccount_trust_configuration.this](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_trust_configuration) | resource |
-| [cloudfoundry_service_instance.auditlog_management](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/service_instance) | resource |
-| [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
-| [cloudfoundry_space.project](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space) | resource |
-| [cloudfoundry_space_quota.foundation_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
-| [cloudfoundry_space_quota.project_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_quota) | resource |
-| [cloudfoundry_space_role.provisioner](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/space_role) | resource |
+| [cloudfoundry_service_instance.auditlog_management](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/service_instance) | resource |
+| [cloudfoundry_space.foundation](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/space) | resource |
+| [cloudfoundry_space.project](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/space) | resource |
+| [cloudfoundry_space_quota.foundation_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/space_quota) | resource |
+| [cloudfoundry_space_quota.project_space_quota](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/space_quota) | resource |
+| [cloudfoundry_space_role.provisioner](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/space_role) | resource |
 
 ## Inputs
 
