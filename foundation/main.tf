@@ -55,7 +55,7 @@ resource "btp_subaccount_environment_instance" "this" {
 resource "cloudfoundry_space" "foundation" {
   name   = "Foundation"
   org    = btp_subaccount_environment_instance.this.platform_id
-  labels = { purpose : "${var.subaccount_stage}" }
+  labels = { purpose : var.subaccount_stage }
 }
 
 resource "cloudfoundry_space_role" "provisioner" {
@@ -100,7 +100,7 @@ resource "cloudfoundry_space_quota" "foundation_space_quota" {
 resource "cloudfoundry_space" "project" {
   name   = "${var.landscape_name} Space"
   org    = btp_subaccount_environment_instance.this.platform_id
-  labels = { purpose : "${var.subaccount_stage}" }
+  labels = { purpose : var.subaccount_stage }
 }
 
 
@@ -129,7 +129,7 @@ module "entitlements" {
   subaccount = btp_subaccount.this.id
 
   entitlements = {
-    "autoscaler" = ["standard"],
+    "autoscaler"       = ["standard"],
     "application-logs" = ["lite"],
     "connectivity"     = ["lite"],
     "destination"      = ["lite"]
