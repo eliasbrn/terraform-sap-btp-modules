@@ -35,13 +35,16 @@ No modules.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.0 |
+| <a name="requirement_cloudfoundry"></a> [cloudfoundry](#requirement\_cloudfoundry) | 1.17.0 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | n/a |
+| <a name="provider_cloudfoundry"></a> [cloudfoundry](#provider\_cloudfoundry) | 1.17.0 |
 
 ## Modules
 
@@ -51,7 +54,7 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [cloudfoundry_org_role.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/latest/docs/resources/org_role) | resource |
+| [cloudfoundry_org_role.this](https://registry.terraform.io/providers/cloudfoundry/cloudfoundry/1.17.0/docs/resources/org_role) | resource |
 
 ## Inputs
 
